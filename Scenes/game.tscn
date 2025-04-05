@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://slibhnluye57"]
+
+[ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
+[ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
+[ext_resource type="Script" uid="uid://dtig2ap04jubv" path="res://Scripts/character.gd" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dgpe0odls4vaj" path="res://Scenes/ui.tscn" id="4_3dryh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2poj3"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_settings_menu", "_fade")]
+script = ExtResource("1_45bwu")
+_settings_menu = NodePath("UI/SettingsMenu")
+_fade = NodePath("UI/Fade")
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("_character")]
+script = ExtResource("2_16ona")
+_character = NodePath("../Character")
+
+[node name="Character" type="CharacterBody2D" parent="."]
+script = ExtResource("2_qxrlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+shape = SubResource("CircleShape2D_2poj3")
+
+[node name="UI" parent="." instance=ExtResource("4_3dryh")]
+
+[connection signal="pressed" from="UI/PauseMenu/Continue" to="." method="toggle_pause"]
+[connection signal="pressed" from="UI/PauseMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Exit" to="." method="_on_exit_pressed"]
+
+[editable path="UI"]

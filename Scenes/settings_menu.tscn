@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfewcb5vflw1e"]
+
+[ext_resource type="Theme" uid="uid://bs1umu8ruhpw4" path="res://Themes/menu.tres" id="1_8ef0u"]
+[ext_resource type="Script" uid="uid://cwioirhpwmmfj" path="res://Scripts/UI/settings_menu.gd" id="2_7y5a0"]
+
+[node name="SettingsMenu" type="PanelContainer" node_paths=PackedStringArray("_default_focus_item")]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -85.5
+offset_right = 151.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8ef0u")
+script = ExtResource("2_7y5a0")
+_default_focus_item = NodePath("VBoxContainer/GridContainer/CameraInvertXCheckBox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="CameraInvertXLabel" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Camera Invert X"
+
+[node name="CameraInvertXCheckBox" type="CheckBox" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CameraInvertYLabel2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Camera Invert Y"
+
+[node name="CameraInvertYCheckBox" type="CheckBox" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Volume" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+step = 0.01
+
+[node name="CloseButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[connection signal="toggled" from="VBoxContainer/GridContainer/CameraInvertXCheckBox" to="." method="_on_camera_invert_x_check_box_toggled"]
+[connection signal="toggled" from="VBoxContainer/GridContainer/CameraInvertYCheckBox" to="." method="_on_camera_invert_y_check_box_toggled"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/CloseButton" to="." method="close"]

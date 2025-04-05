@@ -1,0 +1,99 @@
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://bs1umu8ruhpw4"]
+
+[ext_resource type="Texture2D" uid="uid://cr3fpusowyxfh" path="res://Imported Assets/UI/ButtonsText/ButtonText_Small_ROund.png" id="1_3nykq"]
+[ext_resource type="Texture2D" uid="uid://b0c7lc4m1xj7d" path="res://Imported Assets/UI/ButtonsText/ButtonText_Small_Blue_Round.png" id="2_rjqke"]
+[ext_resource type="Texture2D" uid="uid://dpfhaac0gegs8" path="res://Imported Assets/UI/ButtonsText/SVG/ButtonText_Small_ROund.svg" id="3_qaeys"]
+[ext_resource type="Texture2D" uid="uid://ba3e7onh8qlb0" path="res://Imported Assets/UI/ButtonsText/ButtonText_OnOffBackground.png" id="4_ct8sq"]
+[ext_resource type="FontFile" uid="uid://dqcgkl2sg1roi" path="res://Imported Assets/Fonts/MorrisRomanBlack.ttf" id="5_1k44n"]
+[ext_resource type="Texture2D" uid="uid://r822r1conwad" path="res://Imported Assets/UI/BoxesBanners/Box_Blue_Rounded.png" id="5_wt1nc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpcht"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 32.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_3nykq")
+modulate_color = Color(1, 1, 1, 0.439216)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s81fn"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 32.0
+content_margin_bottom = 8.0
+texture = ExtResource("2_rjqke")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nx0nj"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 32.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_3nykq")
+modulate_color = Color(1, 1, 0.352941, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgv8g"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 32.0
+content_margin_bottom = 8.0
+texture = ExtResource("3_qaeys")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ngec"]
+content_margin_left = 32.0
+content_margin_top = 12.0
+content_margin_right = 32.0
+content_margin_bottom = 8.0
+texture = ExtResource("4_ct8sq")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wt1nc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2gy4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50nkh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytjjd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkbwh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcd3p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4e1q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rbd7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qyvlv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6nus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_helft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eh7pe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q2gy4"]
+texture = ExtResource("5_wt1nc")
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[resource]
+default_font = ExtResource("5_1k44n")
+default_font_size = 30
+Button/colors/font_hover_color = Color(1, 1, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_dpcht")
+Button/styles/focus = SubResource("StyleBoxTexture_s81fn")
+Button/styles/hover = SubResource("StyleBoxTexture_nx0nj")
+Button/styles/normal = SubResource("StyleBoxTexture_pgv8g")
+Button/styles/pressed = SubResource("StyleBoxTexture_6ngec")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_wt1nc")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_q2gy4")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_50nkh")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_ytjjd")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_qkbwh")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_rcd3p")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_s4e1q")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_8rbd7")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_qyvlv")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_k6nus")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_helft")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_eh7pe")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_q2gy4")
