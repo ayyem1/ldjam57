@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var _character: CharacterBody2D
 @onready var _game_manager: GameManager = $/root/Game
@@ -19,19 +19,14 @@ func _process_input_paused(event: InputEvent):
 func _process_input_unpaused(event: InputEvent):
 	if event.is_action_pressed("pause"):
 		_game_manager.toggle_pause()
-	elif event.is_action_pressed("run"):
-		_character.run()
-	elif event.is_action_released("run"):
-		_character.walk()
-	elif event.is_action_pressed("jump"):
-		_character.start_jump()
-	elif event.is_action_released("jump"):
-		_character.complete_jump()
+	if event.is_action_pressed("dig"):
+		_character.dig()
 
 func _process(_delta: float):
 	if get_tree().paused:
 		return
 
+	_character.face_direction(get_global_mouse_position())
 	_input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	_move_direction = _input_direction.normalized()
 	_character.move(_move_direction)
