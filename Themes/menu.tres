@@ -1,10 +1,9 @@
-[gd_resource type="Theme" load_steps=25 format=3 uid="uid://bs1umu8ruhpw4"]
+[gd_resource type="Theme" load_steps=24 format=3 uid="uid://bs1umu8ruhpw4"]
 
 [ext_resource type="Texture2D" uid="uid://cr3fpusowyxfh" path="res://Imported Assets/UI/ButtonsText/ButtonText_Small_ROund.png" id="1_3nykq"]
 [ext_resource type="Texture2D" uid="uid://b0c7lc4m1xj7d" path="res://Imported Assets/UI/ButtonsText/ButtonText_Small_Blue_Round.png" id="2_rjqke"]
 [ext_resource type="Texture2D" uid="uid://dpfhaac0gegs8" path="res://Imported Assets/UI/ButtonsText/SVG/ButtonText_Small_ROund.svg" id="3_qaeys"]
 [ext_resource type="Texture2D" uid="uid://ba3e7onh8qlb0" path="res://Imported Assets/UI/ButtonsText/ButtonText_OnOffBackground.png" id="4_ct8sq"]
-[ext_resource type="FontFile" uid="uid://dqcgkl2sg1roi" path="res://Imported Assets/Fonts/MorrisRomanBlack.ttf" id="5_1k44n"]
 [ext_resource type="Texture2D" uid="uid://r822r1conwad" path="res://Imported Assets/UI/BoxesBanners/Box_Blue_Rounded.png" id="5_wt1nc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpcht"]
@@ -76,7 +75,6 @@ expand_margin_right = 16.0
 expand_margin_bottom = 16.0
 
 [resource]
-default_font = ExtResource("5_1k44n")
 default_font_size = 30
 Button/colors/font_hover_color = Color(1, 1, 0, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_dpcht")

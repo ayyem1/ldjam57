@@ -6,13 +6,13 @@ class_name SceneManager extends Node
 @export var _fade: FadeController
 
 func _ready() -> void:
-    Music.play_track(_background_track)
-    await _fade.to_clear()
+	Music.play_track(_background_track)
+	await _fade.to_clear()
 
 func change_scene(path: String):
-    # NOTE: The order of these matters. We should await the one that takes the longest.
-    Music.fade_out()
-    await _fade.to_black()
+	# NOTE: The order of these matters. We should await the one that takes the longest.
+	Music.fade_out()
+	await _fade.to_black()
 
-    get_tree().paused = false
-    get_tree().change_scene_to_file(path)
+	get_tree().paused = false
+	get_tree().change_scene_to_file(path)

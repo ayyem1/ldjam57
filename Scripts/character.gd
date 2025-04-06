@@ -12,6 +12,16 @@ const SPEED = 300.0
 @onready var _detector: Area2D = $Rig/Detector
 
 var _direction: Vector2
+var _remaining_energy: float
+
+func reset(starting_energy: float):
+	_remaining_energy = starting_energy
+
+func reduce_energy(amount: float):
+	_remaining_energy -= amount
+	print(_remaining_energy)
+	if _remaining_energy <= 0:
+		EventBus.end_level.emit(false)
 
 func face_direction(direction: Vector2):
 	_rig.look_at(direction)
@@ -19,7 +29,8 @@ func face_direction(direction: Vector2):
 func move(direction: Vector2):
 	_direction = direction
 
-func dig():
+func dig(_energy_reduction: float):
+	reduce_energy(_energy_reduction)
 	if !_detector.active_item:
 		print("Nothing to dig")
 		return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=13 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -7,19 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bu3uu27ercpt7" path="res://Created Assets/Art/player_circle.png" id="4_wowpa"]
 [ext_resource type="Texture2D" uid="uid://hha6ylujxxw1" path="res://Created Assets/Art/detector.png" id="5_i6g32"]
 [ext_resource type="Script" uid="uid://c30pqdmxd5fiq" path="res://Scripts/detector.gd" id="5_v158k"]
-[ext_resource type="Texture2D" uid="uid://cg7f8eh7qn0mn" path="res://icon.svg" id="6_1l0tm"]
 [ext_resource type="AudioStream" uid="uid://cmcwavvqh41c2" path="res://Created Assets/SFX/detector_beep.wav" id="6_h4fw4"]
 [ext_resource type="AudioStream" uid="uid://ekj05gg11xdo" path="res://Created Assets/SFX/quack.wav" id="7_ldgsr"]
-[ext_resource type="Script" uid="uid://bu2xjf7dfdgfw" path="res://Scripts/item.gd" id="9_o5yvi"]
+[ext_resource type="PackedScene" uid="uid://buu7n5l54s1ca" path="res://Scenes/item.tscn" id="9_ldgsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2poj3"]
 radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wowpa"]
 radius = 15.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0tm"]
-size = Vector2(128, 128)
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_settings_menu", "_fade")]
 script = ExtResource("1_45bwu")
@@ -68,25 +64,21 @@ shape = SubResource("CircleShape2D_wowpa")
 
 [node name="Node" type="Node" parent="."]
 
-[node name="Item" type="StaticBody2D" parent="Node"]
+[node name="Item" parent="Node" instance=ExtResource("9_ldgsr")]
 position = Vector2(991, 303)
-scale = Vector2(0.25, 0.25)
-collision_layer = 65536
-script = ExtResource("9_o5yvi")
-is_dud = true
+value = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/Item"]
-texture = ExtResource("6_1l0tm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Item"]
-shape = SubResource("RectangleShape2D_1l0tm")
+[node name="Item2" parent="Node" instance=ExtResource("9_ldgsr")]
+position = Vector2(958, 394)
+is_dud = false
 
 [node name="UI" parent="." instance=ExtResource("4_3dryh")]
 
+[node name="VBoxContainer" parent="UI/GameOverMenu" index="0"]
+process_mode = 0
+
 [connection signal="body_entered" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_entered"]
 [connection signal="body_exited" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_exited"]
-[connection signal="pressed" from="UI/PauseMenu/Continue" to="." method="toggle_pause"]
-[connection signal="pressed" from="UI/PauseMenu/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/Exit" to="." method="_on_exit_pressed"]
 
 [editable path="UI"]
+[editable path="UI/SettingsMenu"]
