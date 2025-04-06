@@ -37,13 +37,14 @@ func _process_input_unpaused(event: InputEvent):
 		_character.dig(_dig_energy_reduction)
 
 func _process(delta: float):
-	if !_game_manager.is_game_active:
+	if !_game_manager.is_game_active || _character.is_digging:
+		_character.stop_movement()
 		return
 
 	if get_tree().paused:
 		return
 
-	_character.reduce_energy(_energy_reduction_per_second * delta)
+	_character.reduce_energy(_energy_reduction_per_second * delta, false)
 	_character.face_direction(get_global_mouse_position())
 	_input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	_move_direction = _input_direction.normalized()

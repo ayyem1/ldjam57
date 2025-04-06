@@ -7,43 +7,57 @@
 [ext_resource type="PackedScene" uid="uid://cfewcb5vflw1e" path="res://Scenes/settings_menu.tscn" id="3_m78vo"]
 [ext_resource type="Script" uid="uid://brxa7esns221q" path="res://Scripts/UI/game_over_menu.gd" id="3_q7pk6"]
 [ext_resource type="Script" uid="uid://kc0hp3a2drf0" path="res://Scripts/UI/fade_controller.gd" id="4_smcll"]
-[ext_resource type="Texture2D" uid="uid://cj8e85xahrtk6" path="res://Imported Assets/UI/Sliders/SVG/ScrollBar_Blue_Scroller.svg" id="6_m78vo"]
 [ext_resource type="Texture2D" uid="uid://c70pxr2i0b8e2" path="res://Imported Assets/UI/Sliders/ScrollBar_Blank_Base.png" id="6_smcll"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryf15"]
+texture = ExtResource("6_smcll")
+modulate_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0wmg"]
+texture = ExtResource("6_smcll")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mmixe"]
 texture = ExtResource("6_smcll")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryf15"]
-texture = ExtResource("6_m78vo")
+modulate_color = Color(0.752941, 0, 0.203922, 1)
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="HUD" type="HBoxContainer" parent="."]
+[node name="HUD" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0.733333)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -1.0
+offset_right = -1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_nt8jn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
 layout_direction = 2
-offset_left = 1.0
-offset_top = 20.0
-offset_right = 1921.0
-offset_bottom = 120.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_nt8jn")
 metadata/_edit_use_anchors_ = true
 
-[node name="CoinCount" type="HBoxContainer" parent="HUD"]
+[node name="CoinCount" type="HBoxContainer" parent="HUD/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Padding" type="Label" parent="HUD/CoinCount"]
+[node name="Padding" type="Label" parent="HUD/HBoxContainer/CoinCount"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="Coin2" type="TextureRect" parent="HUD/CoinCount"]
+[node name="Coin2" type="TextureRect" parent="HUD/HBoxContainer/CoinCount"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("1_mmixe")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="HUD/CoinCount"]
+[node name="Label" type="Label" parent="HUD/HBoxContainer/CoinCount"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -51,28 +65,45 @@ theme_override_font_sizes/font_size = 60
 text = "100"
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="HUD"]
+[node name="ProgressBar" type="ProgressBar" parent="HUD/HBoxContainer"]
+z_index = 1
 custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-theme_override_styles/background = SubResource("StyleBoxTexture_mmixe")
 theme_override_styles/fill = SubResource("StyleBoxTexture_ryf15")
-value = 56.23
+value = 100.0
 show_percentage = false
 
-[node name="MetalRating" type="HBoxContainer" parent="HUD"]
+[node name="DamageBar" type="ProgressBar" parent="HUD/HBoxContainer/ProgressBar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_g0wmg")
+theme_override_styles/fill = SubResource("StyleBoxTexture_mmixe")
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="HUD/HBoxContainer/ProgressBar"]
+wait_time = 0.4
+one_shot = true
+
+[node name="MetalRating" type="HBoxContainer" parent="HUD/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HUD/MetalRating"]
+[node name="Label" type="Label" parent="HUD/HBoxContainer/MetalRating"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 65
 text = "100"
 
-[node name="Padding" type="Label" parent="HUD/MetalRating"]
+[node name="Padding" type="Label" parent="HUD/HBoxContainer/MetalRating"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
@@ -170,6 +201,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_smcll")
 
+[connection signal="timeout" from="HUD/HBoxContainer/ProgressBar/Timer" to="HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Continue" to="PauseMenu" method="_on_continue_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Settings" to="PauseMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="PauseMenu" method="_on_exit_pressed"]

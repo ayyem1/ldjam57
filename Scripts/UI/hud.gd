@@ -1,8 +1,11 @@
-extends HBoxContainer
+extends PanelContainer
 
-@onready var _progress_bar: ProgressBar = $ProgressBar
-@onready var _coin_count_label: Label = $CoinCount/Label
-@onready var _metal_rating_label: Label = $MetalRating/Label
+@onready var _progress_bar: ProgressBar = $HBoxContainer/ProgressBar
+@onready var _progress_bar_timer: Timer = $HBoxContainer/ProgressBar/Timer
+@onready var _damage_bar: ProgressBar = $HBoxContainer/ProgressBar/DamageBar
+
+@onready var _coin_count_label: Label = $HBoxContainer/CoinCount/Label
+@onready var _metal_rating_label: Label = $HBoxContainer/MetalRating/Label
 
 func _ready() -> void:
 	EventBus.start_level.connect(_on_level_start)
@@ -17,13 +20,20 @@ func _on_level_start():
 	_metal_rating_label.text = str(0)
 
 func _on_energy_reset(starting_energy: float):
-	pass
 	_progress_bar.max_value = starting_energy
 	_progress_bar.value = starting_energy
 
-func _on_energy_reduced(remaining: int):
-	# TODO: VFX/Animations and whatever else
-	_progress_bar.value = remaining
+	_damage_bar.max_value = starting_energy
+	_damage_bar.value = starting_energy
+
+func _on_energy_reduced(prev_energy: int, remaining_energy: int, is_dig: bool):
+	if is_dig && remaining_energy < prev_energy:
+		_progress_bar_timer.start()
+
+	_progress_bar.value = remaining_energy
+	if _progress_bar_timer.time_left <= 0:
+		# If there isn't a timer active, make the damage bar follow the progress bar
+		_damage_bar.value = _progress_bar.value
 
 func _on_item_acquired(item: Item, total_coins: int):
 	# TODO: VFX/Animations and whatever else
@@ -36,3 +46,6 @@ func _on_item_found(item: Item):
 func _on_item_lost():
 	# TODO: Lerp this value down
 	_metal_rating_label.text = str(0)
+
+func _on_timer_timeout():
+	_damage_bar.value = _progress_bar.value

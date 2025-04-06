@@ -1,6 +1,6 @@
 class_name TitleManager extends SceneManager
 
-@onready var _menu_buttons: Menu = $"Menu Buttons"
+@onready var _menu_buttons: Menu = $"CenterContainer/PanelContainer/Menu Buttons"
 
 func _ready() -> void:
 	super._ready()

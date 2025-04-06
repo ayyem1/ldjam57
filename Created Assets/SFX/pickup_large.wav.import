@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bu8krc2xpbqvd"
+path="res://.godot/imported/pickup_large.wav-2be584af191fdd2fb667293609d9fd90.sample"
+
+[deps]
+
+source_file="res://Created Assets/SFX/pickup_large.wav"
+dest_files=["res://.godot/imported/pickup_large.wav-2be584af191fdd2fb667293609d9fd90.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

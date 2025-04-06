@@ -26,8 +26,8 @@ content_margin_left = 32.0
 content_margin_top = 8.0
 content_margin_right = 32.0
 content_margin_bottom = 8.0
-texture = ExtResource("1_3nykq")
-modulate_color = Color(1, 1, 0.352941, 1)
+texture = ExtResource("2_rjqke")
+modulate_color = Color(0.368627, 0.411765, 0.494118, 0.705882)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgv8g"]
 content_margin_left = 32.0
@@ -76,7 +76,7 @@ expand_margin_bottom = 16.0
 
 [resource]
 default_font_size = 30
-Button/colors/font_hover_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_color = Color(0.886275, 0.768627, 0.541176, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_dpcht")
 Button/styles/focus = SubResource("StyleBoxTexture_s81fn")
 Button/styles/hover = SubResource("StyleBoxTexture_nx0nj")

@@ -24,6 +24,15 @@ script = ExtResource("1_r18jl")
 _background_track = SubResource("AudioStreamOggVorbis_1bamb")
 _fade = NodePath("Fade")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Scroll" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -186,7 +195,7 @@ text = "Eric the Funny Baron"
 horizontal_alignment = 1
 
 [node name="Thank You" type="VBoxContainer" parent="Scroll"]
-custom_minimum_size = Vector2(0, 720)
+custom_minimum_size = Vector2(0, 1080)
 layout_mode = 2
 alignment = 1
 

@@ -21,7 +21,7 @@ signal toggle_pause()
 
 signal reset_character_energy(starting_energy: float)
 
-signal reduce_energy(remaining: int)
+signal reduce_energy(prev_energy: int, remaining: int, is_dig)
 
 signal acquire_item(item: Item, total_coins: int)
 

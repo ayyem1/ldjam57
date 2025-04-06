@@ -1,7 +1,9 @@
 extends Area2D
 
-@onready var _proximity_audio_stream_player: AudioStreamPlayer = $ProximityAudioStreamPlayer
-@onready var _quack_audio_stream_player: AudioStreamPlayer = $QuackAudioStreamPlayer
+@onready var _small_proximity_stream: AudioStreamPlayer = $SmallProximityASP
+@onready var _medium_proximity_stream: AudioStreamPlayer = $MediumProximityASP
+@onready var _large_proximity_stream: AudioStreamPlayer = $LargeProximityASP
+@onready var _dud_audio_stream: AudioStreamPlayer = $DudASP
 
 var active_item: Item
 
@@ -9,7 +11,7 @@ func destroy_active_item():
 	if !active_item:
 		return
 	
-	active_item.queue_free()
+	active_item.visible = false
 	active_item = null
 
 func _on_body_exited(item: Item) -> void:
@@ -19,18 +21,25 @@ func _on_body_exited(item: Item) -> void:
 		EventBus.item_lost.emit()
 
 func _on_body_entered(item: Item) -> void:
+	if active_item:
+		_stop_audio()
+
 	active_item = item
 	_play_audio()
 	EventBus.item_found.emit(active_item)
 
 func _play_audio():
 	if active_item.is_dud:
-		_quack_audio_stream_player.play()
-	else:
-		_proximity_audio_stream_player.play()
+		_dud_audio_stream.play()
+	elif active_item.size == Item.Size.Small:
+		_small_proximity_stream.play()
+	elif active_item.size == Item.Size.Medium:
+		_medium_proximity_stream.play()
+	elif active_item.size == Item.Size.Large:
+		_large_proximity_stream.play()
 
 func _stop_audio():
 	if active_item.is_dud:
-		_quack_audio_stream_player.stop()
+		_dud_audio_stream.stop()
 	else:
-		_proximity_audio_stream_player.stop()
+		_small_proximity_stream.stop()
