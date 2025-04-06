@@ -1,12 +1,81 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgpe0odls4vaj"]
+[gd_scene load_steps=12 format=3 uid="uid://dgpe0odls4vaj"]
 
 [ext_resource type="Theme" uid="uid://bs1umu8ruhpw4" path="res://Themes/menu.tres" id="1_2246s"]
+[ext_resource type="Texture2D" uid="uid://cpqx4uwcywl0i" path="res://Imported Assets/UI/Icons/SVG/Icon_Small_Coin.svg" id="1_mmixe"]
+[ext_resource type="Script" uid="uid://c0rcpj5kvxqmf" path="res://Scripts/UI/hud.gd" id="1_nt8jn"]
 [ext_resource type="Script" uid="uid://c3deyf84uee0" path="res://Scripts/UI/pause_menu.gd" id="1_q7pk6"]
 [ext_resource type="PackedScene" uid="uid://cfewcb5vflw1e" path="res://Scenes/settings_menu.tscn" id="3_m78vo"]
 [ext_resource type="Script" uid="uid://brxa7esns221q" path="res://Scripts/UI/game_over_menu.gd" id="3_q7pk6"]
 [ext_resource type="Script" uid="uid://kc0hp3a2drf0" path="res://Scripts/UI/fade_controller.gd" id="4_smcll"]
+[ext_resource type="Texture2D" uid="uid://cj8e85xahrtk6" path="res://Imported Assets/UI/Sliders/SVG/ScrollBar_Blue_Scroller.svg" id="6_m78vo"]
+[ext_resource type="Texture2D" uid="uid://c70pxr2i0b8e2" path="res://Imported Assets/UI/Sliders/ScrollBar_Blank_Base.png" id="6_smcll"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mmixe"]
+texture = ExtResource("6_smcll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryf15"]
+texture = ExtResource("6_m78vo")
 
 [node name="UI" type="CanvasLayer"]
+
+[node name="HUD" type="HBoxContainer" parent="."]
+layout_direction = 2
+offset_left = 1.0
+offset_top = 20.0
+offset_right = 1921.0
+offset_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_nt8jn")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinCount" type="HBoxContainer" parent="HUD"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Padding" type="Label" parent="HUD/CoinCount"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Coin2" type="TextureRect" parent="HUD/CoinCount"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_mmixe")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HUD/CoinCount"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "100"
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD"]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxTexture_mmixe")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ryf15")
+value = 56.23
+show_percentage = false
+
+[node name="MetalRating" type="HBoxContainer" parent="HUD"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HUD/MetalRating"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 65
+text = "100"
+
+[node name="Padding" type="Label" parent="HUD/MetalRating"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
 
 [node name="PauseMenu" type="PanelContainer" parent="." node_paths=PackedStringArray("_default_focus_item")]
 visible = false
@@ -42,6 +111,7 @@ layout_mode = 2
 text = "CONTINUE"
 
 [node name="Settings" type="Button" parent="PauseMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "SETTINGS"
 
@@ -67,7 +137,6 @@ script = ExtResource("3_q7pk6")
 _default_focus_item = NodePath("VBoxContainer/Restart")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOverMenu"]
-process_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

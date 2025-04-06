@@ -16,9 +16,7 @@ func _ready() -> void:
 	EventBus.end_level.connect(_on_level_over)
 	EventBus.restart_level.connect(start_game)
 
-
-	# TODO: Fix this race condition. this emits in ready while player connects to emit on ready
-	start_game()
+	call_deferred("start_game")
 
 func toggle_pause():
 	var was_paused = get_tree().paused
@@ -35,7 +33,6 @@ func toggle_pause():
 	get_tree().paused = !was_paused
 
 func start_game():
-	print("start_game")
 	_game_over_menu.close()
 	EventBus.start_level.emit()
 	is_game_active = true

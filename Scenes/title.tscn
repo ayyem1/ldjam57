@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://banh4b2n2sgqv"]
 
 [ext_resource type="Script" uid="uid://1vb00nqohaxt" path="res://Scripts/Managers/title_manager.gd" id="1_0yxnp"]
+[ext_resource type="Texture2D" uid="uid://bqcmagnurxyhg" path="res://Imported Assets/title.png" id="2_3eqdi"]
 [ext_resource type="Script" uid="uid://bs3b8fmcbv2ej" path="res://Scripts/UI/menu.gd" id="2_l3xt4"]
 [ext_resource type="Theme" uid="uid://bs1umu8ruhpw4" path="res://Themes/menu.tres" id="4_5avik"]
-[ext_resource type="Texture2D" uid="uid://bpb230muhkt65" path="res://Imported Assets/UI/background.jpg" id="4_6caqf"]
 [ext_resource type="Theme" uid="uid://x2o6gugyj2de" path="res://Themes/title.tres" id="4_ikkwi"]
 [ext_resource type="Script" uid="uid://kc0hp3a2drf0" path="res://Scripts/UI/fade_controller.gd" id="7_uctw6"]
 [ext_resource type="PackedScene" uid="uid://cfewcb5vflw1e" path="res://Scenes/settings_menu.tscn" id="9_6aagf"]
@@ -26,11 +26,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_6caqf")
+texture = ExtResource("2_3eqdi")
 expand_mode = 2
-stretch_mode = 4
 
 [node name="Title" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -45,11 +45,15 @@ text = "Detector"
 [node name="Menu Buttons" type="VBoxContainer" parent="." node_paths=PackedStringArray("_default_focus_item")]
 clip_contents = true
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.667
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.667
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -122.0
+offset_right = 90.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_5avik")
@@ -61,6 +65,7 @@ layout_mode = 2
 text = "Play"
 
 [node name="Settings" type="Button" parent="Menu Buttons"]
+visible = false
 layout_mode = 2
 text = "Settings"
 

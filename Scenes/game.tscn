@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=14 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -17,6 +17,9 @@ radius = 15.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wowpa"]
 radius = 15.0
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ldgsr"]
+b = Vector2(200, 0)
+
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_settings_menu", "_fade")]
 script = ExtResource("1_45bwu")
 _settings_menu = NodePath("UI/SettingsMenu")
@@ -31,6 +34,7 @@ _character = NodePath("../Character")
 position = Vector2(738, 306)
 scale = Vector2(4, 4)
 collision_layer = 256
+collision_mask = 3
 script = ExtResource("2_qxrlw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
@@ -62,20 +66,151 @@ texture = ExtResource("5_i6g32")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Rig/Detector"]
 shape = SubResource("CircleShape2D_wowpa")
 
-[node name="Node" type="Node" parent="."]
+[node name="Items" type="Node" parent="."]
 
-[node name="Item" parent="Node" instance=ExtResource("9_ldgsr")]
+[node name="Small Gold" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(991, 303)
-value = 0
+is_dud = false
+value = 4
 
-[node name="Item2" parent="Node" instance=ExtResource("9_ldgsr")]
+[node name="Small Silver" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(958, 394)
 is_dud = false
+metallic_score = 85.0
+value = 2
+item_name = "Silver"
+
+[node name="Small Copper" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1141, 394)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+
+[node name="Small Zinc Penny" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(968, 228)
+is_dud = false
+metallic_score = 72.0
+value = 1
+item_name = "Silver"
+
+[node name="Medium Gold" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(988, 676)
+is_dud = false
+value = 8
+size = 1
+
+[node name="Medium Silver" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(955, 767)
+is_dud = false
+metallic_score = 85.0
+value = 4
+item_name = "Silver"
+size = 1
+
+[node name="Medium Copper" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1138, 767)
+is_dud = false
+metallic_score = 82.0
+value = 2
+item_name = "Silver"
+size = 1
+
+[node name="Medium Zinc Penny" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(965, 601)
+is_dud = false
+metallic_score = 72.0
+value = 2
+item_name = "Silver"
+size = 1
+
+[node name="Large Gold" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1562, 517)
+is_dud = false
+value = 16
+size = 2
+
+[node name="Large Silver" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1529, 608)
+is_dud = false
+metallic_score = 85.0
+value = 8
+item_name = "Silver"
+size = 2
+
+[node name="Large Copper" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1712, 608)
+is_dud = false
+metallic_score = 82.0
+value = 4
+item_name = "Silver"
+size = 2
+
+[node name="Large Zinc Penny" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1539, 442)
+is_dud = false
+metallic_score = 72.0
+value = 4
+item_name = "Silver"
+size = 2
+
+[node name="Dud" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1050, 245)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+
+[node name="Dud2" parent="Items" instance=ExtResource("9_ldgsr")]
+position = Vector2(1625, 573)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="North" type="StaticBody2D" parent="Walls"]
+collision_layer = 2
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/North"]
+position = Vector2(-1000, 62)
+scale = Vector2(20, 20)
+shape = SubResource("SegmentShape2D_ldgsr")
+
+[node name="East" type="StaticBody2D" parent="Walls"]
+position = Vector2(31, 1)
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/East"]
+position = Vector2(-1000, 62)
+scale = Vector2(20, 20)
+shape = SubResource("SegmentShape2D_ldgsr")
+
+[node name="West" type="StaticBody2D" parent="Walls"]
+position = Vector2(2012, -3)
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/West"]
+position = Vector2(-1000, 62)
+scale = Vector2(20, 20)
+shape = SubResource("SegmentShape2D_ldgsr")
+
+[node name="South" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 1042)
+collision_layer = 2
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/South"]
+position = Vector2(-1000, 62)
+scale = Vector2(20, 20)
+shape = SubResource("SegmentShape2D_ldgsr")
 
 [node name="UI" parent="." instance=ExtResource("4_3dryh")]
-
-[node name="VBoxContainer" parent="UI/GameOverMenu" index="0"]
-process_mode = 0
 
 [connection signal="body_entered" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_entered"]
 [connection signal="body_exited" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_exited"]

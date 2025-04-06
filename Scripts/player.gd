@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _reset():
 	_character.reset(_character_starting_energy)
+	EventBus.reset_character_energy.emit(_character_starting_energy)
 
 func _input(event: InputEvent):
 	if !_game_manager.is_game_active:

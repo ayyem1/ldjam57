@@ -1,10 +1,6 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://x2o6gugyj2de"]
-
-[ext_resource type="FontFile" uid="uid://bkgtqf6t1jed3" path="res://Imported Assets/Fonts/Celtica-Book.ttf" id="1_37k8h"]
+[gd_resource type="Theme" format=3 uid="uid://x2o6gugyj2de"]
 
 [resource]
-default_font = ExtResource("1_37k8h")
-default_font_size = 100
+default_font_size = 200
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 10
-Label/fonts/font = ExtResource("1_37k8h")

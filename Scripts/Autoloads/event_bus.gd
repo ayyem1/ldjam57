@@ -18,3 +18,13 @@ signal restart_level()
 signal end_level(did_win: bool)
 
 signal toggle_pause()
+
+signal reset_character_energy(starting_energy: float)
+
+signal reduce_energy(remaining: int)
+
+signal acquire_item(item: Item, total_coins: int)
+
+signal item_found(item: Item)
+
+signal item_lost()

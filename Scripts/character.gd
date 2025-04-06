@@ -13,13 +13,15 @@ const SPEED = 300.0
 
 var _direction: Vector2
 var _remaining_energy: float
+var _collected_coins: int
 
 func reset(starting_energy: float):
 	_remaining_energy = starting_energy
+	_collected_coins = 0
 
 func reduce_energy(amount: float):
 	_remaining_energy -= amount
-	print(_remaining_energy)
+	EventBus.reduce_energy.emit(_remaining_energy)
 	if _remaining_energy <= 0:
 		EventBus.end_level.emit(false)
 
@@ -39,14 +41,17 @@ func dig(_energy_reduction: float):
 	print(dist)
 	if dist <= _dig_threshold:
 		if _detector.active_item.is_dud:
+			# Play some audio here
 			print("Dud found")
 		else:
-			print("Item found")
+			_collected_coins += _detector.active_item.value
+			EventBus.acquire_item.emit(_detector.active_item, _collected_coins)
+		_detector.destroy_active_item()
 	elif dist <= _closeness_multiplier * _dig_threshold:
 		print("Close")
 	else:
 		print("No Item found")
-
+	
 func _physics_process(_delta: float) -> void:
 	if _direction:
 		velocity = _direction * _speed
