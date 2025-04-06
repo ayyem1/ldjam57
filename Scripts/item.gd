@@ -7,3 +7,4 @@ enum Size {Small, Medium, Large}
 @export var value: int = 5 
 @export var item_name: String = "Gold"
 @export var size: Size = Size.Small
+@export var display_text: String = ""

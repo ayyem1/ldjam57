@@ -119,6 +119,7 @@ dig={
 3d_physics/layer_9="Player"
 2d_physics/layer_10="Detector"
 2d_physics/layer_17="Item"
+2d_physics/layer_18="ItemDisabled"
 
 [physics]
 

@@ -7,11 +7,12 @@ extends Area2D
 
 var active_item: Item
 
-func destroy_active_item():
+func disable_active_item():
 	if !active_item:
 		return
 	
 	active_item.visible = false
+	active_item.set_collision_layer_value(17, false)
 	active_item = null
 
 func _on_body_exited(item: Item) -> void:

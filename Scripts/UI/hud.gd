@@ -15,7 +15,7 @@ func _ready() -> void:
 	EventBus.item_found.connect(_on_item_found)
 	EventBus.item_lost.connect(_on_item_lost)
 
-func _on_level_start():
+func _on_level_start(_player_start: Vector2):
 	_coin_count_label.text = str(0)
 	_metal_rating_label.text = str(0)
 
@@ -37,6 +37,7 @@ func _on_energy_reduced(prev_energy: int, remaining_energy: int, is_dig: bool):
 
 func _on_item_acquired(item: Item, total_coins: int):
 	# TODO: VFX/Animations and whatever else
+	# TODO: Lerp this value up
 	_coin_count_label.text = str(total_coins)
 
 func _on_item_found(item: Item):

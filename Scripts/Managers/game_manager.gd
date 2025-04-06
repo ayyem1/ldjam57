@@ -3,6 +3,7 @@ class_name GameManager extends SceneManager
 @onready var _pause_menu: PauseMenu = $"UI/PauseMenu"
 @onready var _game_over_menu: GameOverMenu = $"UI/GameOverMenu"
 
+@onready var _player_start: Marker2D = $PlayerStart
 var is_game_active: bool = false
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 	EventBus.toggle_pause.connect(toggle_pause)
 	EventBus.end_level.connect(_on_level_over)
 	EventBus.restart_level.connect(start_game)
+	EventBus.acquire_item.connect(_on_item_acquired)
 
 	call_deferred("start_game")
 
@@ -34,7 +36,7 @@ func toggle_pause():
 
 func start_game():
 	_game_over_menu.close()
-	EventBus.start_level.emit()
+	EventBus.start_level.emit(_player_start.global_position)
 	is_game_active = true
 
 func _on_change_level(level_name: String) -> void:
@@ -50,4 +52,8 @@ func _on_settings_pressed() -> void:
 
 func _on_level_over(did_win: bool):
 	is_game_active = false
-	_game_over_menu.open()
+	# _game_over_menu.open()
+
+func _on_item_acquired(_item: Item, collected_coins: int):
+	if collected_coins >= 50: #TODO: Change to per level
+		EventBus.end_level.emit(true)

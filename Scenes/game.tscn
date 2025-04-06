@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=26 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dfx53ygvd8306" path="res://Created Assets/SFX/pickup_small.wav" id="4_nnt18"]
 [ext_resource type="AudioStream" uid="uid://dpyq6wvl8sekt" path="res://Created Assets/SFX/dig.wav" id="4_rfjv2"]
 [ext_resource type="AudioStream" uid="uid://d1kpo0x8rtlbm" path="res://Created Assets/SFX/nothing_there.wav" id="5_1phco"]
+[ext_resource type="PackedScene" uid="uid://dx7kf6ly5dsxt" path="res://Scenes/textbox.tscn" id="5_exi56"]
 [ext_resource type="Script" uid="uid://c30pqdmxd5fiq" path="res://Scripts/detector.gd" id="5_v158k"]
 [ext_resource type="AudioStream" uid="uid://cm7uj0b5blie2" path="res://Created Assets/SFX/stone_hit.wav" id="6_nb51f"]
 [ext_resource type="AudioStream" uid="uid://c10g2xgicrrrt" path="res://Created Assets/SFX/small_v3.wav" id="6_rku1e"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bufyyxt16b07" path="res://Created Assets/Art/player.png" id="11_iivbl"]
 [ext_resource type="Texture2D" uid="uid://dtpcs00k66e7l" path="res://Created Assets/Art/arm.png" id="12_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://co8qoxqcf0l4h" path="res://Created Assets/Art/detector_v2.png" id="18_7nbq1"]
+[ext_resource type="Script" uid="uid://dn2mo50ogon01" path="res://Scripts/Managers/item_manager.gd" id="20_7t8sx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2poj3"]
 radius = 15.0
@@ -39,6 +41,7 @@ _fade = NodePath("UI/Fade")
 process_mode = 3
 script = ExtResource("2_16ona")
 _character = NodePath("../Character")
+_dig_energy_reduction = 7.0
 
 [node name="Character" type="CharacterBody2D" parent="."]
 position = Vector2(738, 306)
@@ -54,6 +57,19 @@ shape = SubResource("CircleShape2D_2poj3")
 [node name="DigASP" type="AudioStreamPlayer" parent="Character"]
 stream = ExtResource("4_rfjv2")
 volume_db = -10.0
+
+[node name="Textbox" parent="Character" instance=ExtResource("5_exi56")]
+visible = false
+z_index = 2
+offset_left = -27.25
+offset_top = -37.0
+offset_right = 85.75
+offset_bottom = 2.0
+scale = Vector2(0.5, 0.5)
+size_flags_vertical = 4
+
+[node name="Label" parent="Character/Textbox/MarginContainer" index="0"]
+text = "It's a small piece of gold!"
 
 [node name="LargePickupASP" type="AudioStreamPlayer" parent="Character"]
 stream = ExtResource("4_85qyi")
@@ -107,30 +123,36 @@ volume_db = -3.0
 
 [node name="LargeProximityASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
 stream = ExtResource("8_1phco")
-volume_db = -4.0
+volume_db = -3.5
 
 [node name="DudASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
 stream = ExtResource("7_ldgsr")
 volume_db = -15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Character/Rig/Detector"]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.246542, 0.25)
 texture = ExtResource("18_7nbq1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Rig/Detector"]
 shape = SubResource("CircleShape2D_wowpa")
 
-[node name="Items" type="Node" parent="."]
+[node name="PlayerStart" type="Marker2D" parent="."]
+position = Vector2(216, 249)
+
+[node name="Items" type="Node2D" parent="."]
+script = ExtResource("20_7t8sx")
 
 [node name="Small Gold" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(991, 303)
+position = Vector2(991, 304)
 is_dud = false
 value = 4
+display_text = "I found a small piece of GOLD!"
 
 [node name="Small Gold2" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(623, 454)
 is_dud = false
 value = 4
+display_text = "It's a small piece of GOLD!"
 
 [node name="Small Silver" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(958, 394)
@@ -138,6 +160,7 @@ is_dud = false
 metallic_score = 85.0
 value = 2
 item_name = "Silver"
+display_text = "It's a small piece of SILVER!"
 
 [node name="Small Copper" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1141, 394)
@@ -145,6 +168,7 @@ is_dud = false
 metallic_score = 82.0
 value = 1
 item_name = "Silver"
+display_text = "It's a small piece of COPPER!"
 
 [node name="Small Zinc Penny" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(968, 228)
@@ -152,18 +176,21 @@ is_dud = false
 metallic_score = 72.0
 value = 1
 item_name = "Silver"
+display_text = "It's a small ZINC PENNY!"
 
 [node name="Medium Gold" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(988, 676)
 is_dud = false
 value = 8
 size = 1
+display_text = "It's a medium piece of GOLD!"
 
 [node name="Medium Gold2" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(717, 456)
 is_dud = false
 value = 8
 size = 1
+display_text = "It's a medium piece of GOLD!"
 
 [node name="Medium Silver" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(955, 767)
@@ -172,6 +199,7 @@ metallic_score = 85.0
 value = 4
 item_name = "Silver"
 size = 1
+display_text = "It's a medium piece of SILVER!"
 
 [node name="Medium Copper" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1138, 767)
@@ -180,26 +208,30 @@ metallic_score = 82.0
 value = 2
 item_name = "Silver"
 size = 1
+display_text = "It's a medium piece of COPPER!"
 
-[node name="Medium Zinc Penny" parent="Items" instance=ExtResource("9_ldgsr")]
+[node name="Medium Zinc Ore" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(965, 601)
 is_dud = false
 metallic_score = 72.0
 value = 2
 item_name = "Silver"
 size = 1
+display_text = "It's a medium ZINC ORE!"
 
 [node name="Large Gold" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1562, 517)
 is_dud = false
 value = 16
 size = 2
+display_text = "It's a LARGE hunk of GOLD!"
 
 [node name="Large Gold2" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(811, 458)
 is_dud = false
 value = 16
 size = 2
+display_text = "It's a LARGE hunk of GOLD!"
 
 [node name="Large Silver" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1529, 608)
@@ -208,6 +240,7 @@ metallic_score = 85.0
 value = 8
 item_name = "Silver"
 size = 2
+display_text = "It's a LARGE hunk of SILVER!"
 
 [node name="Large Copper" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1712, 608)
@@ -216,26 +249,30 @@ metallic_score = 82.0
 value = 4
 item_name = "Silver"
 size = 2
+display_text = "It's a LARGE hunk of COPPER!"
 
-[node name="Large Zinc Penny" parent="Items" instance=ExtResource("9_ldgsr")]
+[node name="Large Zinc Ore" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1539, 442)
 is_dud = false
 metallic_score = 72.0
 value = 4
 item_name = "Silver"
 size = 2
+display_text = "It's a LARGE ZINK ORE!"
 
 [node name="Dud" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1050, 245)
 metallic_score = 0.0
 value = 0
 item_name = "Pulltab"
+display_text = "Garbage."
 
 [node name="Dud2" parent="Items" instance=ExtResource("9_ldgsr")]
 position = Vector2(1625, 573)
 metallic_score = 0.0
 value = 0
 item_name = "Pulltab"
+display_text = "Garbage."
 
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2(0, 8)
@@ -286,5 +323,6 @@ shape = SubResource("SegmentShape2D_ldgsr")
 [connection signal="body_entered" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_entered"]
 [connection signal="body_exited" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_exited"]
 
+[editable path="Character/Textbox"]
 [editable path="UI"]
 [editable path="UI/SettingsMenu"]

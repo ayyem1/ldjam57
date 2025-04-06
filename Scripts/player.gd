@@ -13,7 +13,8 @@ var _move_direction: Vector2
 func _ready() -> void:
 	EventBus.start_level.connect(_reset)
 
-func _reset():
+func _reset(player_start: Vector2):
+	_character.global_position = player_start
 	_character.reset(_character_starting_energy)
 	EventBus.reset_character_energy.emit(_character_starting_energy)
 
@@ -43,8 +44,9 @@ func _process(delta: float):
 
 	if get_tree().paused:
 		return
-
-	_character.reduce_energy(_energy_reduction_per_second * delta, false)
+	
+	# NOTE: Disabled constant energy deduction.
+	# _character.reduce_energy(_energy_reduction_per_second * delta, false)
 	_character.face_direction(get_global_mouse_position())
 	_input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	_move_direction = _input_direction.normalized()
