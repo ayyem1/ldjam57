@@ -62,7 +62,7 @@ func toggle_pause():
 
 func start_game():
 	_game_over_menu.close()
-	EventBus.start_level.emit(_player_start.global_position)
+	EventBus.start_level.emit(_player_start.global_position, _level.goal)
 	is_game_active = true
 
 func _go_to_next_level():
@@ -79,7 +79,7 @@ func _on_settings_pressed() -> void:
 func _on_instructions_pressed() -> void:
 	_instructions.open(_pause_menu)
 
-func _on_item_acquired(_item: Item, collected_coins: int):
+func _on_item_acquired(_item: Item, collected_coins: int, _goal: int):
 	if collected_coins >= _level.goal:
 		is_game_active = false
 		if File.progress.current_level < NUM_LEVELS:

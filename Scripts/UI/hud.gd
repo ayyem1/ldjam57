@@ -15,8 +15,8 @@ func _ready() -> void:
 	EventBus.item_found.connect(_on_item_found)
 	EventBus.item_lost.connect(_on_item_lost)
 
-func _on_level_start(_player_start: Vector2):
-	_coin_count_label.text = str(0)
+func _on_level_start(_player_start: Vector2, goal: int):
+	_coin_count_label.text = "0 / " + str(goal)
 	_metal_rating_label.text = "00.0"
 
 func _on_energy_reset(starting_energy: float):
@@ -35,10 +35,10 @@ func _on_energy_reduced(prev_energy: int, remaining_energy: int, is_dig: bool):
 		# If there isn't a timer active, make the damage bar follow the progress bar
 		_damage_bar.value = _progress_bar.value
 
-func _on_item_acquired(item: Item, total_coins: int):
+func _on_item_acquired(_item: Item, total_coins: int, goal: int):
 	# TODO: VFX/Animations and whatever else
 	# TODO: Lerp this value up
-	_coin_count_label.text = str(total_coins)
+	_coin_count_label.text = str(total_coins) + " / " + str(goal)
 
 func _on_item_found(item: Item):
 	# TODO: Lerp this value up

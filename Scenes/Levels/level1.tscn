@@ -85,15 +85,6 @@ value = 1
 item_name = "Silver"
 display_text = "It's a small ZINC PENNY!"
 
-[node name="Small Zinc Penny5" parent="." instance=ExtResource("1_f6slu")]
-position = Vector2(288, 141)
-scale = Vector2(0.2, 0.2)
-is_dud = false
-metallic_score = 72.0
-value = 1
-item_name = "Silver"
-display_text = "It's a small ZINC PENNY!"
-
 [node name="Medium Copper2" parent="." instance=ExtResource("1_f6slu")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
 position = Vector2(598, 977)
@@ -170,16 +161,6 @@ display_text = "It's a medium ZINC ORE!"
 [node name="Small Copper5" parent="." instance=ExtResource("1_f6slu")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
 position = Vector2(91, 439)
-scale = Vector2(0.2, 0.2)
-is_dud = false
-metallic_score = 82.0
-value = 1
-item_name = "Silver"
-display_text = "It's a small piece of COPPER!"
-
-[node name="Small Copper7" parent="." instance=ExtResource("1_f6slu")]
-modulate = Color(0.4, 0.466667, 0.698039, 1)
-position = Vector2(99, 158)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 82.0

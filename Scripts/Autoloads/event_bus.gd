@@ -29,7 +29,7 @@ signal reset_character_energy(starting_energy: float)
 
 signal reduce_energy(prev_energy: int, remaining: int, is_dig)
 
-signal acquire_item(item: Item, total_coins: int)
+signal acquire_item(item: Item, total_coins: int, goal: int)
 
 signal item_found(item: Item)
 

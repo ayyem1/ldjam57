@@ -13,9 +13,9 @@ var _move_direction: Vector2
 func _ready() -> void:
 	EventBus.start_level.connect(_reset)
 
-func _reset(player_start: Vector2):
+func _reset(player_start: Vector2, goal: int):
 	_character.global_position = player_start
-	_character.reset(_character_starting_energy)
+	_character.reset(_character_starting_energy, goal)
 	EventBus.reset_character_energy.emit(_character_starting_energy)
 
 func _input(event: InputEvent):

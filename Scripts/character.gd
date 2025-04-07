@@ -22,11 +22,13 @@ extends CharacterBody2D
 var _direction: Vector2
 var _remaining_energy: float
 var _collected_coins: int
+var _level_goal: int
 
 var is_digging: bool = false
 
-func reset(starting_energy: float):
+func reset(starting_energy: float, goal: int):
 	_remaining_energy = starting_energy
+	_level_goal = goal
 	_collected_coins = 0
 
 func reduce_energy(amount: float, is_dig: bool):
@@ -79,7 +81,7 @@ func dig(_energy_reduction: float):
 				_small_item_stream.play()
 				await _small_item_stream.finished
 			_collected_coins += _detector.active_item.value
-			EventBus.acquire_item.emit(_detector.active_item, _collected_coins)
+			EventBus.acquire_item.emit(_detector.active_item, _collected_coins, _level_goal)
 		_detector.disable_active_item()
 	elif dist <= _closeness_multiplier * _dig_threshold:
 		_display_text("I'm close!")
@@ -92,10 +94,10 @@ func dig(_energy_reduction: float):
 
 	is_digging = false
 	
-func _display_text(text: String, duration: float = 1):
+func _display_text(text: String, duration: float = 1.5):
 	_textbox_label.text = text
 	_textbox.visible = true
-	await get_tree().create_timer(duration).timeout 
+	await get_tree().create_timer(duration).timeout
 	_textbox.visible = false
 	
 func _physics_process(_delta: float) -> void:

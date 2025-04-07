@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=28 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -17,11 +17,13 @@
 [ext_resource type="AudioStream" uid="uid://ekj05gg11xdo" path="res://Created Assets/SFX/quack.wav" id="7_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://cwg33mg3eu360" path="res://Created Assets/SFX/medium_v3.wav" id="7_rfjv2"]
 [ext_resource type="AudioStream" uid="uid://d2xs7lynyf8la" path="res://Created Assets/SFX/large_v3.wav" id="8_1phco"]
+[ext_resource type="PackedScene" uid="uid://buu7n5l54s1ca" path="res://Scenes/item.tscn" id="9_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://bufyyxt16b07" path="res://Created Assets/Art/player.png" id="11_iivbl"]
 [ext_resource type="Texture2D" uid="uid://dtpcs00k66e7l" path="res://Created Assets/Art/arm.png" id="12_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://co8qoxqcf0l4h" path="res://Created Assets/Art/detector_v2.png" id="18_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://7yhihec4pte3" path="res://Imported Assets/UI/Icons/Icon_Small_Blank_Dollar.png" id="21_exi56"]
 [ext_resource type="FontFile" uid="uid://d0068dh0imbkb" path="res://Imported Assets/Fonts/Super Giggle.ttf" id="22_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://bjijpiode3tdq" path="res://Imported Assets/UI/BoxesBanners/Box_Blank_Rounded.png" id="24_vm72l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2poj3"]
 radius = 15.0
@@ -49,7 +51,7 @@ collision_layer = 256
 collision_mask = 3
 script = ExtResource("2_qxrlw")
 _speed = 250.0
-_closeness_multiplier = 3.0
+_dig_threshold = 700.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 shape = SubResource("CircleShape2D_2poj3")
@@ -69,7 +71,9 @@ scale = Vector2(0.5, 0.5)
 size_flags_vertical = 4
 
 [node name="Label" parent="Character/Textbox/MarginContainer" index="0"]
-text = "It's a small piece of gold!"
+theme_override_fonts/font = ExtResource("22_7t8sx")
+theme_override_font_sizes/font_size = 14
+text = "It's a small piece of GOLD!"
 
 [node name="LargePickupASP" type="AudioStreamPlayer" parent="Character"]
 stream = ExtResource("4_85qyi")
@@ -207,6 +211,20 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("22_7t8sx")
 theme_override_font_sizes/font_size = 60
 
+[node name="Test" parent="." instance=ExtResource("9_ldgsr")]
+modulate = Color(0.721569, 0.45098, 0.2, 1)
+position = Vector2(431, 270)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+display_text = "The rest won't be above ground!"
+
+[node name="Sprite2D" parent="Test" index="0"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("24_vm72l")
+
 [connection signal="body_entered" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_entered"]
 [connection signal="body_exited" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_exited"]
 
@@ -214,3 +232,4 @@ theme_override_font_sizes/font_size = 60
 [editable path="UI"]
 [editable path="UI/Instructions"]
 [editable path="UI/SettingsMenu"]
+[editable path="Test"]
