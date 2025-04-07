@@ -51,7 +51,7 @@ collision_layer = 256
 collision_mask = 3
 script = ExtResource("2_qxrlw")
 _speed = 250.0
-_dig_threshold = 700.0
+_dig_threshold = 800.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 shape = SubResource("CircleShape2D_2poj3")
