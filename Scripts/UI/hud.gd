@@ -43,10 +43,7 @@ func _on_item_acquired(_item: Item, total_coins: int, goal: int):
 
 func _on_item_found(item: Item):
 	# TODO: Lerp this value up
-	if item.is_dud:
-		_metal_rating_label.text = "00.0"
-	else:
-		_metal_rating_label.text = str(item.metallic_score)
+	_metal_rating_label.text = str(item.metallic_score)
 
 func _on_item_lost():
 	# TODO: Lerp this value down

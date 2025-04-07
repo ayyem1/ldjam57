@@ -20,8 +20,9 @@ func _reset(player_start: Vector2, goal: int):
 	_character.reset(_character_starting_energy, goal)
 	EventBus.reset_character_energy.emit(_character_starting_energy)
 
-func _on_level_start(current_level: Level):
-	_character.display_text(current_level.start_text, 2)
+func _on_level_start(current_level: Level, is_first_attempt: bool):
+	if is_first_attempt:
+		_character.display_text(current_level.start_text, 3)
 
 func _input(event: InputEvent):
 	if !_game_manager.is_game_active:

@@ -61,28 +61,30 @@ func toggle_pause():
 
 	get_tree().paused = !was_paused
 
-func start_game():
+func start_game(is_first_attempt: bool):
 	_game_over_menu.close()
-	EventBus.start_level.emit(_level)
-	await get_tree().create_timer(2).timeout
+	EventBus.start_level.emit(_level, is_first_attempt)
+	if is_first_attempt:
+		await get_tree().create_timer(3).timeout
+
 	is_game_active = true
 
 func _start_game_for_first_time():
 	EventBus.reset_level.emit(_player_start.global_position, _level.goal)
-	start_game()
+	start_game(true)
 
 func _on_restart_level():
 	_level.reset_items(true)
 	EventBus.reset_level.emit(_player_start.global_position, _level.goal)
 	await _fade.to_clear(1)
-	start_game()
+	start_game(false)
 
 func _go_to_next_level():
 	File.progress.current_level += 1
 	load_level()
 	EventBus.reset_level.emit(_player_start.global_position, _level.goal)
 	await _fade.to_clear(1)
-	start_game()
+	start_game(true)
 
 func _on_exit_pressed() -> void:
 	change_scene("res://Scenes/title.tscn")
