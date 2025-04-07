@@ -110,7 +110,7 @@ display_text = "It's a medium piece of COPPER!"
 
 [node name="Medium Copper3" parent="." instance=ExtResource("1_f6slu")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
-position = Vector2(480, 320)
+position = Vector2(546, 347)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 metallic_score = 82.0

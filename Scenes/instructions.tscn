@@ -35,12 +35,11 @@ text = "INSTRUCTIONS"
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 30
 theme_override_fonts/font = ExtResource("2_s7gfc")
 theme_override_font_sizes/font_size = 30
 text = "1. Use WASD to move and  mouse cursor to aim the detector.
-
-2. Click the left mouse button to DIG
-
+2. Click th left mouse button to DIG
 3. Gather treasure until it's total worth meets the target goal
 "
 
@@ -56,15 +55,13 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 30
 theme_override_fonts/font = ExtResource("2_s7gfc")
 theme_override_font_sizes/font_size = 30
 text = "1. Listen carefully. Headphones are recommended. 
-
-3. The detector sounds will vary based on item size. It will also warn you of 'duds'.
-
-4. Only DIG when you are sure. DIG reduces your STAMINA.
-
-5. Keep an eye on the frequency reader on the top right. It will clue you in on the type of item."
+2. The detector sounds will vary based on item size. It will also warn you of 'duds'.
+3. Only DIG when you are sure. DIG reduces your STAMINA.
+4. Keep an eye on the frequency reader on the top right. It will clue you in on the type of item."
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -77,6 +74,14 @@ text = "
 72 - ZINC
 82 - COPPER"
 horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s7gfc")
+theme_override_font_sizes/font_size = 30
+text = "
+5. This will be available in the PAUSE MENU (ESCAPE KEY)"
 
 [node name="CloseButton" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 75)

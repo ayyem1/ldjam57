@@ -6,6 +6,7 @@ extends Area2D
 @onready var _dud_audio_stream: AudioStreamPlayer = $DudASP
 
 var active_item: Item
+var _active_stream: AudioStreamPlayer
 
 func disable_active_item():
 	if !active_item:
@@ -18,13 +19,14 @@ func disable_active_item():
 
 func _on_body_exited(item: Item) -> void:
 	if active_item == item:
-		_stop_audio()
+		# if _active_stream:
+		# 	_active_stream.stop()
 		active_item = null
 		EventBus.item_lost.emit()
 
 func _on_body_entered(item: Item) -> void:
-	if active_item:
-		_stop_audio()
+	if active_item && _active_stream:
+		_active_stream.stop()
 
 	active_item = item
 	_play_audio()
@@ -32,16 +34,17 @@ func _on_body_entered(item: Item) -> void:
 
 func _play_audio():
 	if active_item.is_dud:
-		_dud_audio_stream.play()
+		_active_stream = _dud_audio_stream
+		# _dud_audio_stream.play()
 	elif active_item.size == Item.Size.Small:
-		_small_proximity_stream.play()
+		_active_stream = _small_proximity_stream
+		# _small_proximity_stream.play()
 	elif active_item.size == Item.Size.Medium:
-		_medium_proximity_stream.play()
+		_active_stream = _medium_proximity_stream
+		# _medium_proximity_stream.play()
 	elif active_item.size == Item.Size.Large:
-		_large_proximity_stream.play()
-
-func _stop_audio():
-	if active_item.is_dud:
-		_dud_audio_stream.stop()
-	else:
-		_small_proximity_stream.stop()
+		_active_stream = _large_proximity_stream
+		# _large_proximity_stream.play()
+	
+	if _active_stream:
+		_active_stream.play()

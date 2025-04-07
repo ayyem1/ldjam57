@@ -143,6 +143,7 @@ volume_db = -3.5
 [node name="DudASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
 stream = ExtResource("7_ldgsr")
 volume_db = -15.0
+playback_type = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Character/Rig/Detector"]
 scale = Vector2(0.246542, 0.25)
@@ -220,6 +221,17 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("22_7t8sx")
 theme_override_font_sizes/font_size = 60
 
+[node name="Instructions" parent="UI" index="2"]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
 [node name="GameOverMenu" parent="UI" index="3"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_vm72l")
 
@@ -229,7 +241,7 @@ theme_override_font_sizes/font_size = 100
 
 [node name="Test" parent="." instance=ExtResource("9_ldgsr")]
 modulate = Color(0.721569, 0.45098, 0.2, 1)
-position = Vector2(431, 270)
+position = Vector2(420, 256)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 82.0
