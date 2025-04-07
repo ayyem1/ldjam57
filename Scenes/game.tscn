@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=29 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -34,6 +34,9 @@ radius = 15.0
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ldgsr"]
 b = Vector2(200, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm72l"]
+bg_color = Color(0.788235, 0.788235, 0.788235, 1)
+
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_settings_menu", "_fade")]
 script = ExtResource("1_45bwu")
 _settings_menu = NodePath("UI/SettingsMenu")
@@ -61,7 +64,6 @@ stream = ExtResource("4_rfjv2")
 volume_db = -10.0
 
 [node name="Textbox" parent="Character" instance=ExtResource("5_exi56")]
-visible = false
 z_index = 2
 offset_left = -27.25
 offset_top = -37.0
@@ -210,6 +212,13 @@ text = "METER: "
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("22_7t8sx")
 theme_override_font_sizes/font_size = 60
+
+[node name="GameOverMenu" parent="UI" index="3"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_vm72l")
+
+[node name="Title" parent="UI/GameOverMenu/VBoxContainer" index="0"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 
 [node name="Test" parent="." instance=ExtResource("9_ldgsr")]
 modulate = Color(0.721569, 0.45098, 0.2, 1)

@@ -77,7 +77,7 @@ size = 1
 display_text = "It's a medium ZINC ORE!"
 
 [node name="Small Zinc Penny2" parent="." instance=ExtResource("1_f6slu")]
-position = Vector2(428, 438)
+position = Vector2(455, 477)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 72.0
@@ -212,7 +212,7 @@ size = 2
 display_text = "It's a LARGE ZINK ORE!"
 
 [node name="Large Zinc Ore2" parent="." instance=ExtResource("1_f6slu")]
-position = Vector2(304, 378)
+position = Vector2(281, 462)
 scale = Vector2(0.55, 0.55)
 is_dud = false
 metallic_score = 72.0

@@ -11,6 +11,7 @@ func disable_active_item():
 	if !active_item:
 		return
 	
+	#TODO: Move this to LevelManager
 	active_item.visible = false
 	active_item.set_collision_layer_value(17, false)
 	active_item = null

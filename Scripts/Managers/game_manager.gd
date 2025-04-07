@@ -25,6 +25,7 @@ func _ready() -> void:
 	EventBus.restart_level.connect(start_game)
 	EventBus.acquire_item.connect(_on_item_acquired)
 	EventBus.next_level.connect(_go_to_next_level)
+	EventBus.end_level.connect(_on_level_end)
 
 	load_level()
 
@@ -78,6 +79,9 @@ func _on_settings_pressed() -> void:
 
 func _on_instructions_pressed() -> void:
 	_instructions.open(_pause_menu)
+
+func _on_level_end(_did_win: bool):
+	is_game_active = false
 
 func _on_item_acquired(_item: Item, collected_coins: int, _goal: int):
 	if collected_coins >= _level.goal:

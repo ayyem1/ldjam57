@@ -18,6 +18,7 @@ extends CharacterBody2D
 
 @onready var _textbox: MarginContainer = $Textbox
 @onready var _textbox_label: Label = $Textbox/MarginContainer/Label
+@onready var _textbox_timer: Timer = $Textbox/Timer
 
 var _direction: Vector2
 var _remaining_energy: float
@@ -25,6 +26,9 @@ var _collected_coins: int
 var _level_goal: int
 
 var is_digging: bool = false
+
+func _ready() -> void:
+	_textbox_timer.timeout.connect(_on_display_text_timer_timeout)
 
 func reset(starting_energy: float, goal: int):
 	_remaining_energy = starting_energy
@@ -95,11 +99,18 @@ func dig(_energy_reduction: float):
 	is_digging = false
 	
 func _display_text(text: String, duration: float = 1.5):
+	# Stop any active timer
+	if !_textbox_timer.is_stopped():
+		_textbox_timer.stop()
+		_textbox_timer.timeout.emit()
+		
 	_textbox_label.text = text
 	_textbox.visible = true
-	await get_tree().create_timer(duration).timeout
+	_textbox_timer.start(duration)
+
+func _on_display_text_timer_timeout():
 	_textbox.visible = false
-	
+
 func _physics_process(_delta: float) -> void:
 	if _direction:
 		velocity = _direction * _speed
