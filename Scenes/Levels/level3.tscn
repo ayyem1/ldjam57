@@ -92,7 +92,7 @@ display_text = "It's a medium piece of GOLD!"
 
 [node name="Medium Gold2" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(778, 522)
+position = Vector2(792, 422)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 value = 8
@@ -101,7 +101,7 @@ display_text = "It's a medium piece of GOLD!"
 
 [node name="Medium Gold7" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(1791, 358)
+position = Vector2(1765, 359)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 value = 8
@@ -216,15 +216,6 @@ value = 1
 item_name = "Silver"
 display_text = "It's a small ZINC PENNY!"
 
-[node name="Small Zinc Penny5" parent="." instance=ExtResource("1_2hvc6")]
-position = Vector2(296, 145)
-scale = Vector2(0.2, 0.2)
-is_dud = false
-metallic_score = 72.0
-value = 1
-item_name = "Silver"
-display_text = "It's a small ZINC PENNY!"
-
 [node name="Medium Gold3" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(140, 935)
@@ -245,7 +236,7 @@ display_text = "It's a medium piece of GOLD!"
 
 [node name="Medium Silver2" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 0.533333, 0, 1)
-position = Vector2(367, 1002)
+position = Vector2(396, 974)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 metallic_score = 85.0
@@ -256,7 +247,7 @@ display_text = "It's a medium piece of SILVER!"
 
 [node name="Medium Silver4" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 0.533333, 0, 1)
-position = Vector2(70.0001, 312)
+position = Vector2(103, 312)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 metallic_score = 85.0
@@ -326,7 +317,7 @@ display_text = "It's a LARGE hunk of GOLD!"
 
 [node name="Medium Gold5" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(855, 155)
+position = Vector2(855, 176)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 value = 8
@@ -343,19 +334,9 @@ value = 1
 item_name = "Silver"
 display_text = "It's a small piece of COPPER!"
 
-[node name="Small Copper7" parent="." instance=ExtResource("1_2hvc6")]
-modulate = Color(0.4, 0.466667, 0.698039, 1)
-position = Vector2(99, 158)
-scale = Vector2(0.2, 0.2)
-is_dud = false
-metallic_score = 82.0
-value = 1
-item_name = "Silver"
-display_text = "It's a small piece of COPPER!"
-
 [node name="Large Gold2" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(248, 529)
+position = Vector2(293, 541)
 scale = Vector2(0.55, 0.55)
 is_dud = false
 value = 16
@@ -396,7 +377,7 @@ display_text = "It's a LARGE hunk of COPPER!"
 
 [node name="Large Copper2" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
-position = Vector2(1311, 164)
+position = Vector2(1311, 194)
 scale = Vector2(0.55, 0.55)
 is_dud = false
 metallic_score = 82.0
@@ -416,7 +397,7 @@ size = 2
 display_text = "It's a LARGE ZINK ORE!"
 
 [node name="Large Zinc Ore2" parent="." instance=ExtResource("1_2hvc6")]
-position = Vector2(304, 378)
+position = Vector2(102, 552)
 scale = Vector2(0.55, 0.55)
 is_dud = false
 metallic_score = 72.0
@@ -437,7 +418,7 @@ display_text = "It's a LARGE ZINK ORE!"
 
 [node name="Dud" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1177, 219)
+position = Vector2(1177, 256)
 metallic_score = 0.0
 value = 0
 item_name = "Pulltab"
@@ -451,9 +432,25 @@ value = 0
 item_name = "Pulltab"
 display_text = "Garbage."
 
+[node name="Dud7" parent="." instance=ExtResource("1_2hvc6")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(766, 548)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."
+
 [node name="Dud4" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(298, 850)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."
+
+[node name="Dud8" parent="." instance=ExtResource("1_2hvc6")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(287, 382)
 metallic_score = 0.0
 value = 0
 item_name = "Pulltab"
@@ -475,7 +472,7 @@ display_text = "I found a small piece of GOLD!"
 
 [node name="Small Silver3" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 0.533333, 0, 1)
-position = Vector2(777, 1032)
+position = Vector2(756, 1001)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 85.0
@@ -485,7 +482,7 @@ display_text = "It's a small piece of SILVER!"
 
 [node name="Small Copper3" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
-position = Vector2(993, 1030)
+position = Vector2(991, 993)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 82.0
@@ -555,7 +552,7 @@ display_text = "Garbage."
 
 [node name="Dud6" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1656, 1017)
+position = Vector2(1638, 995)
 metallic_score = 0.0
 value = 0
 item_name = "Pulltab"

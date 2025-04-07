@@ -98,7 +98,7 @@ func dig(_energy_reduction: float):
 
 	is_digging = false
 	
-func _display_text(text: String, duration: float = 1.5):
+func _display_text(text: String, duration: float = 1.25):
 	# Stop any active timer
 	if !_textbox_timer.is_stopped():
 		_textbox_timer.stop()

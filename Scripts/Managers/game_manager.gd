@@ -22,14 +22,14 @@ func _ready() -> void:
 	EventBus.instructions_clicked.connect(_on_instructions_pressed)
 	EventBus.exit_to_title.connect(_on_exit_pressed)
 	EventBus.toggle_pause.connect(toggle_pause)
-	EventBus.restart_level.connect(start_game)
+	EventBus.restart_level.connect(_on_restart_level)
 	EventBus.acquire_item.connect(_on_item_acquired)
 	EventBus.next_level.connect(_go_to_next_level)
 	EventBus.end_level.connect(_on_level_end)
 
 	load_level()
 
-	call_deferred("start_game")
+	call_deferred("_start_game_for_first_time")
 
 func load_level():
 	if _level:
@@ -63,12 +63,23 @@ func toggle_pause():
 
 func start_game():
 	_game_over_menu.close()
-	EventBus.start_level.emit(_player_start.global_position, _level.goal)
+	EventBus.start_level.emit()
 	is_game_active = true
+
+func _start_game_for_first_time():
+	EventBus.reset_level.emit(_player_start.global_position, _level.goal)
+	start_game()
+
+func _on_restart_level():
+	EventBus.reset_level.emit(_player_start.global_position, _level.goal)
+	await _fade.to_clear(1)
+	start_game()
 
 func _go_to_next_level():
 	File.progress.current_level += 1
 	load_level()
+	EventBus.reset_level.emit(_player_start.global_position, _level.goal)
+	await _fade.to_clear(1)
 	start_game()
 
 func _on_exit_pressed() -> void:
@@ -82,6 +93,8 @@ func _on_instructions_pressed() -> void:
 
 func _on_level_end(_did_win: bool):
 	is_game_active = false
+	await _fade.to_black(1)
+	EventBus.show_game_over_menu.emit(_did_win)
 
 func _on_item_acquired(_item: Item, collected_coins: int, _goal: int):
 	if collected_coins >= _level.goal:

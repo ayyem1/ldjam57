@@ -8,7 +8,7 @@ extends PanelContainer
 @onready var _metal_rating_label: Label = $HBoxContainer/MetalRating/Label
 
 func _ready() -> void:
-	EventBus.start_level.connect(_on_level_start)
+	EventBus.reset_level.connect(_on_level_start)
 	EventBus.reset_character_energy.connect(_on_energy_reset)
 	EventBus.reduce_energy.connect(_on_energy_reduced)
 	EventBus.acquire_item.connect(_on_item_acquired)
@@ -39,10 +39,14 @@ func _on_item_acquired(_item: Item, total_coins: int, goal: int):
 	# TODO: VFX/Animations and whatever else
 	# TODO: Lerp this value up
 	_coin_count_label.text = str(total_coins) + " / " + str(goal)
+	_metal_rating_label.text = "00.0"
 
 func _on_item_found(item: Item):
 	# TODO: Lerp this value up
-	_metal_rating_label.text = str(item.metallic_score)
+	if item.is_dud:
+		_metal_rating_label.text = "00.0"
+	else:
+		_metal_rating_label.text = str(item.metallic_score)
 
 func _on_item_lost():
 	# TODO: Lerp this value down

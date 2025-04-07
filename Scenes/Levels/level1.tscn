@@ -5,6 +5,7 @@
 
 [node name="Level01" type="Node2D"]
 script = ExtResource("1_66ail")
+start_text = "This area has tons of zinc and copper!"
 
 [node name="Small Copper" parent="." instance=ExtResource("1_f6slu")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
@@ -129,7 +130,7 @@ size = 1
 display_text = "It's a medium ZINC ORE!"
 
 [node name="Medium Zinc Ore6" parent="." instance=ExtResource("1_f6slu")]
-position = Vector2(358, 974)
+position = Vector2(358, 975)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 metallic_score = 72.0
@@ -166,7 +167,7 @@ is_dud = false
 metallic_score = 82.0
 value = 1
 item_name = "Silver"
-display_text = "It's a small piece of COPPER!"
+display_text = "It's a small COPPER penny!"
 
 [node name="Large Copper" parent="." instance=ExtResource("1_f6slu")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
@@ -282,7 +283,7 @@ display_text = "It's a LARGE ZINK ORE!"
 
 [node name="Small Copper3" parent="." instance=ExtResource("1_f6slu")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
-position = Vector2(993, 1030)
+position = Vector2(993, 999)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 82.0

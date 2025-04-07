@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=32 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -31,8 +31,17 @@ radius = 15.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wowpa"]
 radius = 15.0
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ldgsr"]
-b = Vector2(200, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22asu"]
+size = Vector2(200, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkdbe"]
+size = Vector2(10, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81klo"]
+size = Vector2(10, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm72l"]
+size = Vector2(200, 10)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm72l"]
 bg_color = Color(0.788235, 0.788235, 0.788235, 1)
@@ -48,7 +57,7 @@ script = ExtResource("2_16ona")
 _character = NodePath("../Character")
 
 [node name="Character" type="CharacterBody2D" parent="."]
-position = Vector2(212, 249)
+position = Vector2(211, 245)
 scale = Vector2(4, 4)
 collision_layer = 256
 collision_mask = 3
@@ -64,18 +73,18 @@ stream = ExtResource("4_rfjv2")
 volume_db = -10.0
 
 [node name="Textbox" parent="Character" instance=ExtResource("5_exi56")]
+visible = false
 z_index = 2
-offset_left = -27.25
-offset_top = -37.0
-offset_right = 85.75
-offset_bottom = 2.0
+offset_left = -14.75
+offset_top = -36.5
+offset_right = 17.25
+offset_bottom = 1.5
 scale = Vector2(0.5, 0.5)
 size_flags_vertical = 4
 
 [node name="Label" parent="Character/Textbox/MarginContainer" index="0"]
 theme_override_fonts/font = ExtResource("22_7t8sx")
 theme_override_font_sizes/font_size = 14
-text = "It's a small piece of GOLD!"
 
 [node name="LargePickupASP" type="AudioStreamPlayer" parent="Character"]
 stream = ExtResource("4_85qyi")
@@ -153,31 +162,29 @@ collision_layer = 2
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/North"]
-position = Vector2(-1000, 62)
+position = Vector2(939, 21)
 scale = Vector2(20, 20)
-shape = SubResource("SegmentShape2D_ldgsr")
+shape = SubResource("RectangleShape2D_22asu")
 
 [node name="East" type="StaticBody2D" parent="Walls"]
 position = Vector2(31, 1)
-rotation = 1.5708
 collision_layer = 2
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/East"]
-position = Vector2(-1000, 62)
+position = Vector2(-85, 437)
 scale = Vector2(20, 20)
-shape = SubResource("SegmentShape2D_ldgsr")
+shape = SubResource("RectangleShape2D_fkdbe")
 
 [node name="West" type="StaticBody2D" parent="Walls"]
 position = Vector2(2012, -3)
-rotation = 1.5708
 collision_layer = 2
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/West"]
-position = Vector2(-1000, 62)
+position = Vector2(-49.0001, 437)
 scale = Vector2(20, 20)
-shape = SubResource("SegmentShape2D_ldgsr")
+shape = SubResource("RectangleShape2D_81klo")
 
 [node name="South" type="StaticBody2D" parent="Walls"]
 position = Vector2(0, 1042)
@@ -185,9 +192,9 @@ collision_layer = 2
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/South"]
-position = Vector2(-1000, 62)
+position = Vector2(1004, 98)
 scale = Vector2(20, 20)
-shape = SubResource("SegmentShape2D_ldgsr")
+shape = SubResource("RectangleShape2D_vm72l")
 
 [node name="UI" parent="." instance=ExtResource("4_3dryh")]
 
@@ -228,7 +235,7 @@ is_dud = false
 metallic_score = 82.0
 value = 1
 item_name = "Silver"
-display_text = "The rest won't be above ground!"
+display_text = "The rest will be underground!"
 
 [node name="Sprite2D" parent="Test" index="0"]
 scale = Vector2(0.1, 0.1)

@@ -180,7 +180,7 @@ item_name = "Silver"
 display_text = "It's a small ZINC PENNY!"
 
 [node name="Medium Zinc Ore5" parent="." instance=ExtResource("1_18cmx")]
-position = Vector2(1239, 1007)
+position = Vector2(1239, 967)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 metallic_score = 72.0
@@ -209,7 +209,7 @@ item_name = "Silver"
 display_text = "It's a small ZINC PENNY!"
 
 [node name="Small Zinc Penny5" parent="." instance=ExtResource("1_18cmx")]
-position = Vector2(296, 145)
+position = Vector2(296, 182)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 72.0
@@ -219,7 +219,7 @@ display_text = "It's a small ZINC PENNY!"
 
 [node name="Medium Silver2" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0.533333, 0, 1)
-position = Vector2(367, 1002)
+position = Vector2(367, 978)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 metallic_score = 85.0
@@ -230,7 +230,7 @@ display_text = "It's a medium piece of SILVER!"
 
 [node name="Medium Silver4" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0.533333, 0, 1)
-position = Vector2(70.0001, 312)
+position = Vector2(123, 312)
 scale = Vector2(0.35, 0.35)
 is_dud = false
 metallic_score = 85.0
@@ -294,7 +294,7 @@ display_text = "It's a small piece of COPPER!"
 
 [node name="Small Copper7" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(0.4, 0.466667, 0.698039, 1)
-position = Vector2(99, 158)
+position = Vector2(136, 158)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 82.0
@@ -410,7 +410,7 @@ display_text = "It's a LARGE ZINK ORE!"
 
 [node name="Dud" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1581, 126)
+position = Vector2(1586, 164)
 metallic_score = 0.0
 value = 0
 item_name = "Pulltab"
@@ -434,7 +434,7 @@ display_text = "Garbage."
 
 [node name="Small Silver3" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0.533333, 0, 1)
-position = Vector2(777, 1032)
+position = Vector2(777, 991)
 scale = Vector2(0.2, 0.2)
 is_dud = false
 metallic_score = 85.0

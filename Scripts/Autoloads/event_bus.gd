@@ -13,11 +13,15 @@ signal settings_menu_clicked()
 
 signal instructions_clicked()
 
-signal start_level(player_start_pos: Vector2)
+signal reset_level(player_start_po: Vector2, level_goal: int)
+
+signal start_level()
 
 signal restart_level()
 
 signal end_level(did_win: bool)
+
+signal show_game_over_menu(did_win: bool)
 
 signal next_level()
 

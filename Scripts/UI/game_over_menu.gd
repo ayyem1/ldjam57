@@ -6,10 +6,12 @@ class_name GameOverMenu extends Menu
 var _did_win: bool = false
 
 func _ready() -> void:
-	EventBus.end_level.connect(_on_level_over)
+	EventBus.show_game_over_menu.connect(_on_show_game_over_menu)
 
 func _on_exit_pressed() -> void:
 	EventBus.exit_to_title.emit()
+
+	close()
 
 func _on_restart_pressed() -> void:
 	if _did_win:
@@ -19,7 +21,7 @@ func _on_restart_pressed() -> void:
 	
 	close()
 
-func _on_level_over(did_win: bool):
+func _on_show_game_over_menu(did_win: bool):
 	_did_win = did_win
 	if did_win:
 		title.text = "YOU WIN"
