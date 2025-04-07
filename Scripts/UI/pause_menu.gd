@@ -8,3 +8,6 @@ func _on_settings_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	EventBus.exit_to_title.emit()
+
+func _on_instructions_pressed():
+	EventBus.instructions_clicked.emit()

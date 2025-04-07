@@ -11,11 +11,17 @@ signal exit_to_title()
 
 signal settings_menu_clicked()
 
-signal start_level()
+signal instructions_clicked()
+
+signal start_level(player_start_pos: Vector2)
 
 signal restart_level()
 
 signal end_level(did_win: bool)
+
+signal next_level()
+
+signal end_content()
 
 signal toggle_pause()
 

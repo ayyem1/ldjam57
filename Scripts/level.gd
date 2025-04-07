@@ -1,17 +1,9 @@
-extends Node3D
+class_name Level extends Node2D
 
-@onready var _transitions: Array[Node] = $Transitions.get_children()
+@onready var items: Array[Node] = get_children()
+@export var goal: int = 10
 
-func _ready() -> void:
-	for i in len(_transitions):
-		_transitions[i].id = i
-
-func get_entrance_position(transition_index: int) -> Vector3:
-	return _transitions[transition_index].entrance.global_position
-
-func get_entrance_forward(transition_index: int) -> float:
-	return _transitions[transition_index].rotation.y
-
-func activate_transitions():
-	for transition in _transitions:
-		transition.monitoring = true
+func reset_items(enabled: bool):
+	for item in items:
+		item.visible = false
+		item.set_collision_layer_value(17, enabled)

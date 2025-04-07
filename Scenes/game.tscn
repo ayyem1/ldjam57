@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=24 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -17,11 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://ekj05gg11xdo" path="res://Created Assets/SFX/quack.wav" id="7_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://cwg33mg3eu360" path="res://Created Assets/SFX/medium_v3.wav" id="7_rfjv2"]
 [ext_resource type="AudioStream" uid="uid://d2xs7lynyf8la" path="res://Created Assets/SFX/large_v3.wav" id="8_1phco"]
-[ext_resource type="PackedScene" uid="uid://buu7n5l54s1ca" path="res://Scenes/item.tscn" id="9_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://bufyyxt16b07" path="res://Created Assets/Art/player.png" id="11_iivbl"]
 [ext_resource type="Texture2D" uid="uid://dtpcs00k66e7l" path="res://Created Assets/Art/arm.png" id="12_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://co8qoxqcf0l4h" path="res://Created Assets/Art/detector_v2.png" id="18_7nbq1"]
-[ext_resource type="Script" uid="uid://dn2mo50ogon01" path="res://Scripts/Managers/item_manager.gd" id="20_7t8sx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2poj3"]
 radius = 15.0
@@ -41,15 +39,15 @@ _fade = NodePath("UI/Fade")
 process_mode = 3
 script = ExtResource("2_16ona")
 _character = NodePath("../Character")
-_dig_energy_reduction = 7.0
 
 [node name="Character" type="CharacterBody2D" parent="."]
-position = Vector2(738, 306)
+position = Vector2(212, 249)
 scale = Vector2(4, 4)
 collision_layer = 256
 collision_mask = 3
 script = ExtResource("2_qxrlw")
 _speed = 250.0
+_closeness_multiplier = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 shape = SubResource("CircleShape2D_2poj3")
@@ -139,141 +137,6 @@ shape = SubResource("CircleShape2D_wowpa")
 [node name="PlayerStart" type="Marker2D" parent="."]
 position = Vector2(216, 249)
 
-[node name="Items" type="Node2D" parent="."]
-script = ExtResource("20_7t8sx")
-
-[node name="Small Gold" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(991, 304)
-is_dud = false
-value = 4
-display_text = "I found a small piece of GOLD!"
-
-[node name="Small Gold2" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(623, 454)
-is_dud = false
-value = 4
-display_text = "It's a small piece of GOLD!"
-
-[node name="Small Silver" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(958, 394)
-is_dud = false
-metallic_score = 85.0
-value = 2
-item_name = "Silver"
-display_text = "It's a small piece of SILVER!"
-
-[node name="Small Copper" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1141, 394)
-is_dud = false
-metallic_score = 82.0
-value = 1
-item_name = "Silver"
-display_text = "It's a small piece of COPPER!"
-
-[node name="Small Zinc Penny" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(968, 228)
-is_dud = false
-metallic_score = 72.0
-value = 1
-item_name = "Silver"
-display_text = "It's a small ZINC PENNY!"
-
-[node name="Medium Gold" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(988, 676)
-is_dud = false
-value = 8
-size = 1
-display_text = "It's a medium piece of GOLD!"
-
-[node name="Medium Gold2" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(717, 456)
-is_dud = false
-value = 8
-size = 1
-display_text = "It's a medium piece of GOLD!"
-
-[node name="Medium Silver" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(955, 767)
-is_dud = false
-metallic_score = 85.0
-value = 4
-item_name = "Silver"
-size = 1
-display_text = "It's a medium piece of SILVER!"
-
-[node name="Medium Copper" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1138, 767)
-is_dud = false
-metallic_score = 82.0
-value = 2
-item_name = "Silver"
-size = 1
-display_text = "It's a medium piece of COPPER!"
-
-[node name="Medium Zinc Ore" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(965, 601)
-is_dud = false
-metallic_score = 72.0
-value = 2
-item_name = "Silver"
-size = 1
-display_text = "It's a medium ZINC ORE!"
-
-[node name="Large Gold" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1562, 517)
-is_dud = false
-value = 16
-size = 2
-display_text = "It's a LARGE hunk of GOLD!"
-
-[node name="Large Gold2" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(811, 458)
-is_dud = false
-value = 16
-size = 2
-display_text = "It's a LARGE hunk of GOLD!"
-
-[node name="Large Silver" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1529, 608)
-is_dud = false
-metallic_score = 85.0
-value = 8
-item_name = "Silver"
-size = 2
-display_text = "It's a LARGE hunk of SILVER!"
-
-[node name="Large Copper" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1712, 608)
-is_dud = false
-metallic_score = 82.0
-value = 4
-item_name = "Silver"
-size = 2
-display_text = "It's a LARGE hunk of COPPER!"
-
-[node name="Large Zinc Ore" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1539, 442)
-is_dud = false
-metallic_score = 72.0
-value = 4
-item_name = "Silver"
-size = 2
-display_text = "It's a LARGE ZINK ORE!"
-
-[node name="Dud" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1050, 245)
-metallic_score = 0.0
-value = 0
-item_name = "Pulltab"
-display_text = "Garbage."
-
-[node name="Dud2" parent="Items" instance=ExtResource("9_ldgsr")]
-position = Vector2(1625, 573)
-metallic_score = 0.0
-value = 0
-item_name = "Pulltab"
-display_text = "Garbage."
-
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2(0, 8)
 
@@ -320,9 +183,14 @@ shape = SubResource("SegmentShape2D_ldgsr")
 
 [node name="UI" parent="." instance=ExtResource("4_3dryh")]
 
+[node name="Instructions" parent="UI" index="2"]
+visible = false
+
 [connection signal="body_entered" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_entered"]
 [connection signal="body_exited" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_exited"]
+[connection signal="pressed" from="UI/Instructions/CloseButton" to="UI/Instructions" method="close"]
 
 [editable path="Character/Textbox"]
 [editable path="UI"]
+[editable path="UI/Instructions"]
 [editable path="UI/SettingsMenu"]

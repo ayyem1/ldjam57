@@ -1,0 +1,562 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxl4m46h3oiml"]
+
+[ext_resource type="Script" uid="uid://cii6n5sg320e0" path="res://Scripts/level.gd" id="1_2e1f7"]
+[ext_resource type="PackedScene" uid="uid://buu7n5l54s1ca" path="res://Scenes/item.tscn" id="1_18cmx"]
+
+[node name="Level02" type="Node2D"]
+script = ExtResource("1_2e1f7")
+goal = 30
+
+[node name="Small Gold" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(991, 304)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "I found a small piece of GOLD!"
+
+[node name="Small Gold2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(642, 438)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "It's a small piece of GOLD!"
+
+[node name="Small Silver" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(942, 423)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 85.0
+value = 2
+item_name = "Silver"
+display_text = "It's a small piece of SILVER!"
+
+[node name="Small Silver5" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(679, 185)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 85.0
+value = 2
+item_name = "Silver"
+display_text = "It's a small piece of SILVER!"
+
+[node name="Small Copper" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(1140, 394)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small piece of COPPER!"
+
+[node name="Small Silver6" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(1295, 405)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 85.0
+value = 2
+item_name = "Silver"
+display_text = "It's a small piece of SILVER!"
+
+[node name="Small Copper6" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(1570, 383)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small piece of COPPER!"
+
+[node name="Small Zinc Penny" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(993, 182)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 72.0
+value = 1
+display_text = "It's a small ZINC PENNY!"
+
+[node name="Medium Gold" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(988, 676)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+value = 8
+size = 1
+display_text = "It's a medium piece of GOLD!"
+
+[node name="Medium Gold2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(778, 522)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+value = 8
+size = 1
+display_text = "It's a medium piece of GOLD!"
+
+[node name="Medium Gold6" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(632, 319)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+value = 8
+size = 1
+display_text = "It's a medium piece of GOLD!"
+
+[node name="Medium Silver" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(898, 766)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 85.0
+value = 4
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of SILVER!"
+
+[node name="Medium Silver5" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(1434, 470)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 85.0
+value = 4
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of SILVER!"
+
+[node name="Medium Silver3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(489, 181)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 85.0
+value = 4
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of SILVER!"
+
+[node name="Medium Copper" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(1137, 767)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 82.0
+value = 2
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of COPPER!"
+
+[node name="Medium Zinc Ore" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(944, 562)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 72.0
+value = 2
+item_name = "Silver"
+size = 1
+display_text = "It's a medium ZINC ORE!"
+
+[node name="Medium Zinc Ore3" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(577, 546)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 72.0
+value = 2
+item_name = "Silver"
+size = 1
+display_text = "It's a medium ZINC ORE!"
+
+[node name="Small Gold3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(567, 664)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "I found a small piece of GOLD!"
+
+[node name="Small Gold4" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(83, 664)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "It's a small piece of GOLD!"
+
+[node name="Small Silver2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(418, 604)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 85.0
+value = 2
+item_name = "Silver"
+display_text = "It's a small piece of SILVER!"
+
+[node name="Small Zinc Penny2" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(428, 438)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 72.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small ZINC PENNY!"
+
+[node name="Small Zinc Penny5" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(296, 145)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 72.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small ZINC PENNY!"
+
+[node name="Medium Gold3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(140, 935)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+value = 8
+size = 1
+display_text = "It's a medium piece of GOLD!"
+
+[node name="Medium Gold4" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(238, 732)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+value = 8
+size = 1
+display_text = "It's a medium piece of GOLD!"
+
+[node name="Medium Silver2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(367, 1002)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 85.0
+value = 4
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of SILVER!"
+
+[node name="Medium Silver4" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(70.0001, 312)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 85.0
+value = 4
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of SILVER!"
+
+[node name="Medium Copper2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(598, 977)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 82.0
+value = 2
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of COPPER!"
+
+[node name="Medium Copper3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(480, 320)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 82.0
+value = 2
+item_name = "Silver"
+size = 1
+display_text = "It's a medium piece of COPPER!"
+
+[node name="Medium Zinc Ore2" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(489, 781)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+metallic_score = 72.0
+value = 2
+item_name = "Silver"
+size = 1
+display_text = "It's a medium ZINC ORE!"
+
+[node name="Large Gold Long" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1719, 214)
+scale = Vector2(0.75, 0.55)
+is_dud = false
+value = 16
+size = 2
+display_text = "It's a LARGE hunk of GOLD!"
+
+[node name="Large Gold" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(757, 694)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+value = 16
+size = 2
+display_text = "It's a LARGE hunk of GOLD!"
+
+[node name="Large Gold3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1212, 983)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+value = 16
+size = 2
+display_text = "It's a LARGE hunk of GOLD!"
+
+[node name="Medium Gold5" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(855, 155)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+value = 8
+size = 1
+display_text = "It's a medium piece of GOLD!"
+
+[node name="Small Copper5" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(91, 439)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small piece of COPPER!"
+
+[node name="Small Copper7" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(99, 158)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small piece of COPPER!"
+
+[node name="Large Gold2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(248, 529)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+value = 16
+size = 2
+display_text = "It's a LARGE hunk of GOLD!"
+
+[node name="Large Silver" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(1529, 608)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+metallic_score = 85.0
+value = 8
+item_name = "Silver"
+size = 2
+display_text = "It's a LARGE hunk of SILVER!"
+
+[node name="Large Silver Long" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(1462, 951)
+scale = Vector2(0.747412, 0.55)
+is_dud = false
+metallic_score = 85.0
+value = 8
+item_name = "Silver"
+size = 2
+display_text = "It's a LARGE hunk of SILVER!"
+
+[node name="Large Copper" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(1711, 608)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+metallic_score = 82.0
+value = 4
+item_name = "Silver"
+size = 2
+display_text = "It's a LARGE hunk of COPPER!"
+
+[node name="Large Copper2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(1311, 164)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+metallic_score = 82.0
+value = 4
+item_name = "Silver"
+size = 2
+display_text = "It's a LARGE hunk of COPPER!"
+
+[node name="Large Zinc Ore" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(1455, 260)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+metallic_score = 72.0
+value = 4
+item_name = "Silver"
+size = 2
+display_text = "It's a LARGE ZINK ORE!"
+
+[node name="Large Zinc Ore2" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(304, 378)
+scale = Vector2(0.55, 0.55)
+is_dud = false
+metallic_score = 72.0
+value = 4
+item_name = "Silver"
+size = 2
+display_text = "It's a LARGE ZINK ORE!"
+
+[node name="Large Zinc Ore Tall" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(1101, 538)
+scale = Vector2(0.55, 0.75)
+is_dud = false
+metallic_score = 72.0
+value = 4
+item_name = "Silver"
+size = 2
+display_text = "It's a LARGE ZINK ORE!"
+
+[node name="Dud" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1177, 219)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."
+
+[node name="Dud5" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(844, 286)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."
+
+[node name="Dud4" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(298, 850)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."
+
+[node name="Small Gold5" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(1016, 880)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "It's a small piece of GOLD!"
+
+[node name="Small Gold6" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(844, 940)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "I found a small piece of GOLD!"
+
+[node name="Small Silver3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(777, 1032)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 85.0
+value = 2
+item_name = "Silver"
+display_text = "It's a small piece of SILVER!"
+
+[node name="Small Copper3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(993, 1030)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small piece of COPPER!"
+
+[node name="Small Zinc Penny3" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(760, 859)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 72.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small ZINC PENNY!"
+
+[node name="Small Gold7" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(1714, 756)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "It's a small piece of GOLD!"
+
+[node name="Small Gold8" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(1596, 817)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+value = 4
+display_text = "I found a small piece of GOLD!"
+
+[node name="Small Silver4" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0.533333, 0, 1)
+position = Vector2(1318, 808)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 85.0
+value = 2
+item_name = "Silver"
+display_text = "It's a small piece of SILVER!"
+
+[node name="Small Copper4" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(0.4, 0.466667, 0.698039, 1)
+position = Vector2(1691, 906)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 82.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small piece of COPPER!"
+
+[node name="Small Zinc Penny4" parent="." instance=ExtResource("1_18cmx")]
+position = Vector2(1469, 738)
+scale = Vector2(0.2, 0.2)
+is_dud = false
+metallic_score = 72.0
+value = 1
+item_name = "Silver"
+display_text = "It's a small ZINC PENNY!"
+
+[node name="Dud3" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1258, 568)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."
+
+[node name="Dud6" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1656, 1017)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."
+
+[node name="Dud2" parent="." instance=ExtResource("1_18cmx")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1740, 477)
+scale = Vector2(0.5, 0.35)
+metallic_score = 0.0
+value = 0
+item_name = "Pulltab"
+display_text = "Garbage."

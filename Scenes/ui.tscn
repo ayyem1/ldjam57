@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgpe0odls4vaj"]
+[gd_scene load_steps=14 format=3 uid="uid://dgpe0odls4vaj"]
 
 [ext_resource type="Theme" uid="uid://bs1umu8ruhpw4" path="res://Themes/menu.tres" id="1_2246s"]
 [ext_resource type="Texture2D" uid="uid://cpqx4uwcywl0i" path="res://Imported Assets/UI/Icons/SVG/Icon_Small_Coin.svg" id="1_mmixe"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfewcb5vflw1e" path="res://Scenes/settings_menu.tscn" id="3_m78vo"]
 [ext_resource type="Script" uid="uid://brxa7esns221q" path="res://Scripts/UI/game_over_menu.gd" id="3_q7pk6"]
 [ext_resource type="Script" uid="uid://kc0hp3a2drf0" path="res://Scripts/UI/fade_controller.gd" id="4_smcll"]
+[ext_resource type="PackedScene" uid="uid://dadfnefr7wmql" path="res://Scenes/instructions.tscn" id="6_mmixe"]
 [ext_resource type="Texture2D" uid="uid://c70pxr2i0b8e2" path="res://Imported Assets/UI/Sliders/ScrollBar_Blank_Base.png" id="6_smcll"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryf15"]
@@ -143,6 +144,11 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "CONTINUE"
 
+[node name="Instructions" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "INSTRUCTIONS
+"
+
 [node name="Settings" type="Button" parent="PauseMenu/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -151,6 +157,19 @@ text = "SETTINGS"
 [node name="Exit" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "EXIT"
+
+[node name="Instructions" parent="." instance=ExtResource("6_mmixe")]
+visible = true
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -924.5
+offset_top = -495.5
+offset_right = 924.5
+offset_bottom = 495.5
 
 [node name="GameOverMenu" type="PanelContainer" parent="." node_paths=PackedStringArray("_default_focus_item")]
 visible = false
@@ -172,7 +191,7 @@ size_flags_vertical = 4
 [node name="Title" type="Label" parent="GameOverMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "GAME OVER"
+text = "YOU LOST"
 horizontal_alignment = 1
 
 [node name="VButtonContainer" type="VBoxContainer" parent="GameOverMenu/VBoxContainer"]
@@ -183,7 +202,7 @@ theme = ExtResource("1_2246s")
 
 [node name="Restart" type="Button" parent="GameOverMenu/VBoxContainer/VButtonContainer"]
 layout_mode = 2
-text = "RESTART"
+text = "RESTART LEVEL"
 
 [node name="Exit" type="Button" parent="GameOverMenu/VBoxContainer/VButtonContainer"]
 layout_mode = 2
@@ -206,7 +225,11 @@ script = ExtResource("4_smcll")
 
 [connection signal="timeout" from="HUD/HBoxContainer/ProgressBar/Timer" to="HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Continue" to="PauseMenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/Instructions" to="PauseMenu" method="_on_instructions_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Settings" to="PauseMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="PauseMenu" method="_on_exit_pressed"]
+[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="close"]
 [connection signal="pressed" from="GameOverMenu/VBoxContainer/VButtonContainer/Restart" to="GameOverMenu" method="_on_restart_pressed"]
 [connection signal="pressed" from="GameOverMenu/VBoxContainer/VButtonContainer/Exit" to="GameOverMenu" method="_on_exit_pressed"]
+
+[editable path="Instructions"]

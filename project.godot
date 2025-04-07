@@ -13,7 +13,7 @@ config_version=5
 config/name="Detector"
 run/main_scene="res://Scenes/title.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://co8qoxqcf0l4h"
 
 [autoload]
 
@@ -115,6 +115,7 @@ dig={
 
 2d_physics/layer_1="Terrain"
 3d_physics/layer_1="Terrain"
+2d_physics/layer_2="Walls"
 2d_physics/layer_9="Player"
 3d_physics/layer_9="Player"
 2d_physics/layer_10="Detector"

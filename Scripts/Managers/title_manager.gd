@@ -1,6 +1,7 @@
 class_name TitleManager extends SceneManager
 
 @onready var _menu_buttons: Menu = $"CenterContainer/PanelContainer/Menu Buttons"
+@onready var _instructions: Menu = $"Instructions"
 
 func _ready() -> void:
 	super._ready()
@@ -17,6 +18,12 @@ func _on_exit_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	change_scene("res://Scenes/credits.tscn")
+
+func _on_show_instructions() -> void:
+	_instructions.open(_menu_buttons)
+
+func _on_close_instructions() -> void:
+	_instructions.close()
 
 func _on_settings_pressed() -> void:
 	_settings_menu.open(_menu_buttons)

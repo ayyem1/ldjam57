@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://dadfnefr7wmql"]
+
+[ext_resource type="Script" uid="uid://bs3b8fmcbv2ej" path="res://Scripts/UI/menu.gd" id="1_5doqj"]
+[ext_resource type="FontFile" uid="uid://d0068dh0imbkb" path="res://Imported Assets/Fonts/Super Giggle.ttf" id="2_s7gfc"]
+[ext_resource type="Theme" uid="uid://bs1umu8ruhpw4" path="res://Themes/menu.tres" id="3_v8bcc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qdx2"]
+bg_color = Color(0.787759, 0.787759, 0.787759, 1)
+
+[node name="Instructions" type="PanelContainer" node_paths=PackedStringArray("_default_focus_item")]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qdx2")
+script = ExtResource("1_5doqj")
+_default_focus_item = NodePath("CloseButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="INSTRUCTIONS" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s7gfc")
+theme_override_font_sizes/font_size = 40
+text = "INSTRUCTIONS"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s7gfc")
+theme_override_font_sizes/font_size = 30
+text = "1. Use WASD to move and  mouse cursor to aim the detector.
+
+2. Click the left mouse button to DIG
+
+3. Gather treasure until it's total worth meets the target goal
+"
+
+[node name="TIPS" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s7gfc")
+theme_override_font_sizes/font_size = 40
+text = "TIPS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s7gfc")
+theme_override_font_sizes/font_size = 30
+text = "1. Listen carefully. Headphones are recommended. 
+
+3. The detector sounds will vary based on item size. It will also warn you of 'duds'.
+
+4. Only DIG when you are sure. DIG reduces your STAMINA.
+
+5. Keep an eye on the frequency reader on the top right. It will clue you in on the type of item."
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s7gfc")
+theme_override_font_sizes/font_size = 30
+text = "
+60 - GOLD
+85 - SILVER
+72 - ZINC
+82 - COPPER"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("3_v8bcc")
+text = "Close"
