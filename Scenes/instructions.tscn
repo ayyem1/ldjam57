@@ -5,11 +5,10 @@
 [ext_resource type="Theme" uid="uid://bs1umu8ruhpw4" path="res://Themes/menu.tres" id="3_v8bcc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qdx2"]
-bg_color = Color(0.787759, 0.787759, 0.787759, 1)
+bg_color = Color(0.886275, 0.768627, 0.541176, 1)
 
 [node name="Instructions" type="PanelContainer" node_paths=PackedStringArray("_default_focus_item")]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,13 +68,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_s7gfc")
 theme_override_font_sizes/font_size = 30
 text = "
-60 - GOLD
-85 - SILVER
-72 - ZINC
-82 - COPPER"
+Meter Readings: 
+GOLD - 60
+SILVER - 85 
+ZINC - 72
+COPPER - 82"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_s7gfc")

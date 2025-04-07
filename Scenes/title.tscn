@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cfewcb5vflw1e" path="res://Scenes/settings_menu.tscn" id="9_6aagf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qdx2"]
-bg_color = Color(0.787759, 0.787759, 0.787759, 1)
+bg_color = Color(0.886275, 0.768627, 0.541176, 1)
 
 [node name="Title" type="Control" node_paths=PackedStringArray("_fade")]
 layout_mode = 3
@@ -114,7 +114,7 @@ theme_override_constants/line_spacing = 30
 theme_override_fonts/font = ExtResource("6_3eqdi")
 theme_override_font_sizes/font_size = 30
 text = "1. Use WASD to move and  mouse cursor to aim the detector.
-2. Click th left mouse button to DIG
+2. Click the left mouse button to DIG
 3. Gather treasure until it's total worth meets the target goal
 "
 
@@ -144,10 +144,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_3eqdi")
 theme_override_font_sizes/font_size = 30
 text = "
-60 - GOLD
-85 - SILVER
-72 - ZINC
-82 - COPPER"
+Meter Readings:  GOLD - 60 | SILVER - 85 | ZINC - 72 | COPPER - 82"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="Instructions/VBoxContainer"]

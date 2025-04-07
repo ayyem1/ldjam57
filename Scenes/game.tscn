@@ -226,6 +226,7 @@ theme_override_fonts/font = ExtResource("22_7t8sx")
 theme_override_font_sizes/font_size = 60
 
 [node name="Instructions" parent="UI" index="2"]
+visible = false
 anchors_preset = 15
 anchor_left = 0.0
 anchor_top = 0.0
@@ -235,6 +236,16 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="Label" parent="UI/Instructions/VBoxContainer" index="1"]
+text = "1. Use WASD to move and  mouse cursor to aim the detector.
+2. Click the left mouse button to DIG
+3. Gather treasure until it's total worth meets the target goal
+"
+
+[node name="Label4" parent="UI/Instructions/VBoxContainer" index="5"]
+text = "
+5. These instructions will be available in the PAUSE MENU (ESCAPE KEY)"
 
 [node name="GameOverMenu" parent="UI" index="3"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_vm72l")
