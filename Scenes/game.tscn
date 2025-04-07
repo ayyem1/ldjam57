@@ -131,19 +131,23 @@ script = ExtResource("5_v158k")
 [node name="SmallProximityASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
 stream = ExtResource("6_rku1e")
 volume_db = -3.0
+bus = &"SmallProximity"
+playback_type = 1
 
 [node name="MediumProximityASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
 stream = ExtResource("7_rfjv2")
 volume_db = -3.0
+bus = &"MediumProximity"
 
 [node name="LargeProximityASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
 stream = ExtResource("8_1phco")
 volume_db = -3.5
+bus = &"LargeProximity"
 
 [node name="DudASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
 stream = ExtResource("7_ldgsr")
 volume_db = -15.0
-playback_type = 2
+bus = &"DudProximity"
 
 [node name="Sprite2D" type="Sprite2D" parent="Character/Rig/Detector"]
 scale = Vector2(0.246542, 0.25)

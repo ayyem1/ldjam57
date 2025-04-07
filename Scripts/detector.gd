@@ -7,6 +7,8 @@ extends Area2D
 
 var active_item: Item
 var _active_stream: AudioStreamPlayer
+var _play: bool = false
+var _stop: bool = false
 
 func disable_active_item():
 	if !active_item:
@@ -19,32 +21,29 @@ func disable_active_item():
 
 func _on_body_exited(item: Item) -> void:
 	if active_item == item:
-		# if _active_stream:
-		# 	_active_stream.stop()
 		active_item = null
 		EventBus.item_lost.emit()
 
 func _on_body_entered(item: Item) -> void:
-	if active_item && _active_stream:
-		_active_stream.stop()
-
 	active_item = item
-	_play_audio()
+	_load_audio()
+	_play = true
 	EventBus.item_found.emit(active_item)
 
-func _play_audio():
+func _load_audio():
 	if active_item.is_dud:
 		_active_stream = _dud_audio_stream
-		# _dud_audio_stream.play()
 	elif active_item.size == Item.Size.Small:
 		_active_stream = _small_proximity_stream
-		# _small_proximity_stream.play()
 	elif active_item.size == Item.Size.Medium:
 		_active_stream = _medium_proximity_stream
-		# _medium_proximity_stream.play()
 	elif active_item.size == Item.Size.Large:
 		_active_stream = _large_proximity_stream
-		# _large_proximity_stream.play()
 	
+
+func _physics_process(delta: float) -> void:
 	if _active_stream:
-		_active_stream.play()
+		if _play:
+			if !_active_stream.playing:
+				_active_stream.play()
+				_play = false
