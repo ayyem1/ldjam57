@@ -41,7 +41,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 70
 text = "Game Design"
 horizontal_alignment = 1
 
@@ -49,7 +49,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "Azim Momin"
 horizontal_alignment = 1
 
@@ -60,7 +60,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 70
 text = "Game Development"
 horizontal_alignment = 1
 
@@ -68,7 +68,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "Azim Momin"
 horizontal_alignment = 1
 
@@ -79,7 +79,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 70
 text = "Programming"
 horizontal_alignment = 1
 
@@ -87,7 +87,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "Azim Momin"
 horizontal_alignment = 1
 
@@ -98,7 +98,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 70
 text = "Character Models"
 horizontal_alignment = 1
 
@@ -106,7 +106,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "Azim Momin"
 horizontal_alignment = 1
 
@@ -117,7 +117,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 70
 text = "User Interface"
 horizontal_alignment = 1
 
@@ -125,7 +125,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "Penzilla"
 horizontal_alignment = 1
 
@@ -136,7 +136,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 70
 text = "Title Art"
 horizontal_alignment = 1
 
@@ -144,7 +144,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "ChatGPT with DALL·E from OpenAI"
 horizontal_alignment = 1
 
@@ -155,7 +155,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 70
 text = "Music"
 horizontal_alignment = 1
 
@@ -163,7 +163,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "Azim Momin"
 horizontal_alignment = 1
 
@@ -176,7 +176,7 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 75
 text = "Thank you for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -42,32 +42,38 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(500, 300)
 layout_mode = 2
 
 [node name="Menu Buttons" type="VBoxContainer" parent="CenterContainer/PanelContainer" node_paths=PackedStringArray("_default_focus_item")]
 clip_contents = true
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("4_5avik")
+theme_override_constants/separation = 10
 script = ExtResource("2_l3xt4")
 _default_focus_item = NodePath("New Game")
 
 [node name="New Game" type="Button" parent="CenterContainer/PanelContainer/Menu Buttons"]
 layout_mode = 2
-text = "Play"
+theme_override_fonts/font = ExtResource("6_3eqdi")
+text = "PLAY"
 
 [node name="Instructions" type="Button" parent="CenterContainer/PanelContainer/Menu Buttons"]
 layout_mode = 2
-text = "Instructions"
+theme_override_fonts/font = ExtResource("6_3eqdi")
+text = "INSTRUCTIONS"
 
 [node name="Credits" type="Button" parent="CenterContainer/PanelContainer/Menu Buttons"]
 layout_mode = 2
-text = "Credits"
+theme_override_fonts/font = ExtResource("6_3eqdi")
+text = "CREDITS"
 
 [node name="Exit" type="Button" parent="CenterContainer/PanelContainer/Menu Buttons"]
 layout_mode = 2
-text = "Exit"
+theme_override_fonts/font = ExtResource("6_3eqdi")
+text = "EXIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -153,6 +159,8 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("4_5avik")
+theme_override_fonts/font = ExtResource("6_3eqdi")
+theme_override_font_sizes/font_size = 40
 text = "Close"
 
 [node name="Fade" type="ColorRect" parent="."]

@@ -99,6 +99,15 @@ value = 8
 size = 1
 display_text = "It's a medium piece of GOLD!"
 
+[node name="Medium Gold7" parent="." instance=ExtResource("1_2hvc6")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1791, 358)
+scale = Vector2(0.35, 0.35)
+is_dud = false
+value = 8
+size = 1
+display_text = "It's a medium piece of GOLD!"
+
 [node name="Medium Gold6" parent="." instance=ExtResource("1_2hvc6")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(632, 319)

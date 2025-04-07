@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _on_level_start(_player_start: Vector2):
 	_coin_count_label.text = str(0)
-	_metal_rating_label.text = str(0)
+	_metal_rating_label.text = "00.0"
 
 func _on_energy_reset(starting_energy: float):
 	_progress_bar.max_value = starting_energy
@@ -46,7 +46,7 @@ func _on_item_found(item: Item):
 
 func _on_item_lost():
 	# TODO: Lerp this value down
-	_metal_rating_label.text = str(0)
+	_metal_rating_label.text = "00.0"
 
 func _on_timer_timeout():
 	_damage_bar.value = _progress_bar.value

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://slibhnluye57"]
+[gd_scene load_steps=26 format=3 uid="uid://slibhnluye57"]
 
 [ext_resource type="Script" uid="uid://bmf6wfy6846ux" path="res://Scripts/Managers/game_manager.gd" id="1_45bwu"]
 [ext_resource type="Script" uid="uid://bwuy0grftqlmp" path="res://Scripts/player.gd" id="2_16ona"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bufyyxt16b07" path="res://Created Assets/Art/player.png" id="11_iivbl"]
 [ext_resource type="Texture2D" uid="uid://dtpcs00k66e7l" path="res://Created Assets/Art/arm.png" id="12_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://co8qoxqcf0l4h" path="res://Created Assets/Art/detector_v2.png" id="18_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://7yhihec4pte3" path="res://Imported Assets/UI/Icons/Icon_Small_Blank_Dollar.png" id="21_exi56"]
+[ext_resource type="FontFile" uid="uid://d0068dh0imbkb" path="res://Imported Assets/Fonts/Super Giggle.ttf" id="22_7t8sx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2poj3"]
 radius = 15.0
@@ -183,12 +185,30 @@ shape = SubResource("SegmentShape2D_ldgsr")
 
 [node name="UI" parent="." instance=ExtResource("4_3dryh")]
 
-[node name="Instructions" parent="UI" index="2"]
-visible = false
+[node name="Coin2" parent="UI/HUD/HBoxContainer/CoinCount" index="1"]
+texture = ExtResource("21_exi56")
+
+[node name="Label" parent="UI/HUD/HBoxContainer/CoinCount" index="2"]
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("22_7t8sx")
+
+[node name="MetalRating" parent="UI/HUD/HBoxContainer" index="2"]
+size_flags_horizontal = 10
+
+[node name="Label2" type="Label" parent="UI/HUD/HBoxContainer/MetalRating" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("22_7t8sx")
+theme_override_font_sizes/font_size = 65
+text = "METER: "
+
+[node name="Label" parent="UI/HUD/HBoxContainer/MetalRating" index="1"]
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("22_7t8sx")
+theme_override_font_sizes/font_size = 60
 
 [connection signal="body_entered" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_entered"]
 [connection signal="body_exited" from="Character/Rig/Detector" to="Character/Rig/Detector" method="_on_body_exited"]
-[connection signal="pressed" from="UI/Instructions/CloseButton" to="UI/Instructions" method="close"]
 
 [editable path="Character/Textbox"]
 [editable path="UI"]
