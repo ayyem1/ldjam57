@@ -12,6 +12,7 @@ var _move_direction: Vector2
 
 func _ready() -> void:
 	EventBus.reset_level.connect(_reset)
+	
 
 func _reset(player_start: Vector2, goal: int):
 	_character.global_position = player_start

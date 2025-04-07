@@ -34,6 +34,7 @@ func reset(starting_energy: float, goal: int):
 	_remaining_energy = starting_energy
 	_level_goal = goal
 	_collected_coins = 0
+	_rig.rotation = 0
 
 func reduce_energy(amount: float, is_dig: bool):
 	var prev_energy = _remaining_energy

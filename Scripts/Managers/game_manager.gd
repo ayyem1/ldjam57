@@ -71,6 +71,7 @@ func _start_game_for_first_time():
 	start_game()
 
 func _on_restart_level():
+	_level.reset_items(true)
 	EventBus.reset_level.emit(_player_start.global_position, _level.goal)
 	await _fade.to_clear(1)
 	start_game()
