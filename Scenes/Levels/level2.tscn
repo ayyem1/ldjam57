@@ -5,7 +5,8 @@
 
 [node name="Level02" type="Node2D"]
 script = ExtResource("1_2e1f7")
-goal = 25
+goal = 20
+start_text = "This area has SILVER, ZINC, and COPPER!"
 
 [node name="Small Silver" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0.533333, 0, 1)
@@ -411,15 +412,15 @@ display_text = "It's a LARGE ZINK ORE!"
 [node name="Dud" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(1586, 164)
-metallic_score = 0.0
+metallic_score = 82.0
 value = 0
 item_name = "Pulltab"
 display_text = "Garbage."
 
 [node name="Dud5" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(844, 286)
-metallic_score = 0.0
+position = Vector2(844, 285)
+metallic_score = 72.0
 value = 0
 item_name = "Pulltab"
 display_text = "Garbage."
@@ -427,7 +428,7 @@ display_text = "Garbage."
 [node name="Dud4" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(298, 850)
-metallic_score = 0.0
+metallic_score = 85.0
 value = 0
 item_name = "Pulltab"
 display_text = "Garbage."
@@ -483,7 +484,7 @@ display_text = "It's a small ZINC PENNY!"
 [node name="Dud3" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(1258, 568)
-metallic_score = 0.0
+metallic_score = 82.0
 value = 0
 item_name = "Pulltab"
 display_text = "Garbage."
@@ -491,7 +492,7 @@ display_text = "Garbage."
 [node name="Dud6" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(1656, 1017)
-metallic_score = 0.0
+metallic_score = 72.0
 value = 0
 item_name = "Pulltab"
 display_text = "Garbage."
@@ -500,7 +501,7 @@ display_text = "Garbage."
 modulate = Color(1, 0, 0, 1)
 position = Vector2(1740, 477)
 scale = Vector2(0.5, 0.35)
-metallic_score = 0.0
+metallic_score = 85.0
 value = 0
 item_name = "Pulltab"
 display_text = "Garbage."

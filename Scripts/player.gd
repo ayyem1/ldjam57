@@ -12,12 +12,16 @@ var _move_direction: Vector2
 
 func _ready() -> void:
 	EventBus.reset_level.connect(_reset)
-	
+	EventBus.start_level.connect(_on_level_start)
+
 
 func _reset(player_start: Vector2, goal: int):
 	_character.global_position = player_start
 	_character.reset(_character_starting_energy, goal)
 	EventBus.reset_character_energy.emit(_character_starting_energy)
+
+func _on_level_start(current_level: Level):
+	_character.display_text(current_level.start_text, 2)
 
 func _input(event: InputEvent):
 	if !_game_manager.is_game_active:

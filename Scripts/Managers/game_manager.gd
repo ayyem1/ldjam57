@@ -63,7 +63,8 @@ func toggle_pause():
 
 func start_game():
 	_game_over_menu.close()
-	EventBus.start_level.emit()
+	EventBus.start_level.emit(_level)
+	await get_tree().create_timer(2).timeout
 	is_game_active = true
 
 func _start_game_for_first_time():

@@ -15,7 +15,7 @@ signal instructions_clicked()
 
 signal reset_level(player_start_po: Vector2, level_goal: int)
 
-signal start_level()
+signal start_level(current_level: Level)
 
 signal restart_level()
 

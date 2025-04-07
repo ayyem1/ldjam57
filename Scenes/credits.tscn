@@ -91,10 +91,10 @@ theme_override_font_sizes/font_size = 40
 text = "Azim Momin"
 horizontal_alignment = 1
 
-[node name="Character Art" type="VBoxContainer" parent="Scroll"]
+[node name="Character Sprites" type="VBoxContainer" parent="Scroll"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="Scroll/Character Art"]
+[node name="Title" type="Label" parent="Scroll/Character Sprites"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
@@ -102,7 +102,7 @@ theme_override_font_sizes/font_size = 70
 text = "Character Models"
 horizontal_alignment = 1
 
-[node name="Azim Momin" type="Label" parent="Scroll/Character Art"]
+[node name="Azim Momin" type="Label" parent="Scroll/Character Sprites"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
@@ -146,6 +146,25 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1bamb")
 theme_override_font_sizes/font_size = 40
 text = "ChatGPT with DALL·E from OpenAI"
+horizontal_alignment = 1
+
+[node name="Fonts" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Scroll/Fonts"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1bamb")
+theme_override_font_sizes/font_size = 70
+text = "Fonts"
+horizontal_alignment = 1
+
+[node name="ChatGPT" type="Label" parent="Scroll/Fonts"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1bamb")
+theme_override_font_sizes/font_size = 40
+text = "Fsuarez913 (DaFont) - Super Giggle"
 horizontal_alignment = 1
 
 [node name="Music" type="VBoxContainer" parent="Scroll"]

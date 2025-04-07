@@ -60,7 +60,7 @@ func dig(_energy_reduction: float):
 	await get_tree().create_timer(.05).timeout # TODO: Does this make the game worse?
 
 	if !_detector.active_item:
-		_display_text("Nothing detected.")
+		display_text("Nothing detected.")
 		_no_item_stream.play()
 		await _no_item_stream.finished
 		is_digging = false
@@ -70,12 +70,12 @@ func dig(_energy_reduction: float):
 	print(dist)
 	if dist <= _dig_threshold:
 		if _detector.active_item.is_dud:
-			_display_text("Garbage.")
+			display_text("Garbage.")
 			_dud_item_stream.play()
 			# TODO: Show VFX
 			await _dud_item_stream.finished
 		else:
-			_display_text(_detector.active_item.display_text)
+			display_text(_detector.active_item.display_text)
 			if _detector.active_item.value >= 8:
 				_large_item_stream.play()
 				await _large_item_stream.finished
@@ -89,17 +89,17 @@ func dig(_energy_reduction: float):
 			EventBus.acquire_item.emit(_detector.active_item, _collected_coins, _level_goal)
 		_detector.disable_active_item()
 	elif dist <= _closeness_multiplier * _dig_threshold:
-		_display_text("I'm close!")
+		display_text("I'm close!")
 		_close_item_stream.play()
 		await _close_item_stream.finished
 	else:
-		_display_text("I'm too far.")
+		display_text("I'm too far.")
 		_no_item_stream.play()
 		await _no_item_stream.finished
 
 	is_digging = false
 	
-func _display_text(text: String, duration: float = 1.25):
+func display_text(text: String, duration: float = 1.25):
 	# Stop any active timer
 	if !_textbox_timer.is_stopped():
 		_textbox_timer.stop()
