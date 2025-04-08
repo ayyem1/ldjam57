@@ -135,7 +135,7 @@ theme_override_fonts/font = ExtResource("6_3eqdi")
 theme_override_font_sizes/font_size = 30
 text = "1. Listen carefully. Headphones are recommended. 
 2. The detector sounds will vary based on item size. It will also warn you of 'duds'.
-3. Only DIG when you are sure. DIG reduces your STAMINA.
+3. DIG reduces your STAMINA. You only get the item if you DIG close enough to its center.
 4. Keep an eye on the frequency reader on the top right. It will clue you in on the type of item."
 
 [node name="Label3" type="Label" parent="Instructions/VBoxContainer"]
@@ -144,7 +144,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_3eqdi")
 theme_override_font_sizes/font_size = 30
 text = "
-Meter Readings:  GOLD - 60 | SILVER - 85 | ZINC - 72 | COPPER - 82"
+Meter Readings & Values: 
+GOLD - 60 | $4 - $16
+SILVER - 85 | $2 - $8
+ZINC - 72 | $1 - $4
+COPPER - 82 | $1 -$4"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="Instructions/VBoxContainer"]

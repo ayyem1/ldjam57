@@ -40,7 +40,6 @@ func _load_audio():
 	elif active_item.size == Item.Size.Large:
 		_active_stream = _large_proximity_stream
 	
-
 func _physics_process(delta: float) -> void:
 	if _active_stream:
 		if _play:

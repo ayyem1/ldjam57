@@ -6,7 +6,7 @@
 [node name="Level02" type="Node2D"]
 script = ExtResource("1_2e1f7")
 goal = 20
-start_text = "This area has SILVER, ZINC, and COPPER!"
+start_text = "This level has SILVER, ZINC, and COPPER!"
 
 [node name="Small Silver" parent="." instance=ExtResource("1_18cmx")]
 modulate = Color(1, 0.533333, 0, 1)

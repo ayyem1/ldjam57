@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dee64uxp4nb34"
+path="res://.godot/imported/large_v4.wav-c08cc4555ac83e824c8b855c70371cea.sample"
+
+[deps]
+
+source_file="res://Created Assets/SFX/large_v4.wav"
+dest_files=["res://.godot/imported/large_v4.wav-c08cc4555ac83e824c8b855c70371cea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

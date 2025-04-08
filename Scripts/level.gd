@@ -6,5 +6,5 @@ class_name Level extends Node2D
 
 func reset_items(enabled: bool):
 	for item in items:
-		item.visible = false
+		item.visible = false 
 		item.set_collision_layer_value(17, enabled)

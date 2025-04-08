@@ -13,14 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://dx7kf6ly5dsxt" path="res://Scenes/textbox.tscn" id="5_exi56"]
 [ext_resource type="Script" uid="uid://c30pqdmxd5fiq" path="res://Scripts/detector.gd" id="5_v158k"]
 [ext_resource type="AudioStream" uid="uid://cm7uj0b5blie2" path="res://Created Assets/SFX/stone_hit.wav" id="6_nb51f"]
-[ext_resource type="AudioStream" uid="uid://c10g2xgicrrrt" path="res://Created Assets/SFX/small_v3.wav" id="6_rku1e"]
 [ext_resource type="AudioStream" uid="uid://ekj05gg11xdo" path="res://Created Assets/SFX/quack.wav" id="7_ldgsr"]
-[ext_resource type="AudioStream" uid="uid://cwg33mg3eu360" path="res://Created Assets/SFX/medium_v3.wav" id="7_rfjv2"]
-[ext_resource type="AudioStream" uid="uid://d2xs7lynyf8la" path="res://Created Assets/SFX/large_v3.wav" id="8_1phco"]
 [ext_resource type="PackedScene" uid="uid://buu7n5l54s1ca" path="res://Scenes/item.tscn" id="9_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://bufyyxt16b07" path="res://Created Assets/Art/player.png" id="11_iivbl"]
 [ext_resource type="Texture2D" uid="uid://dtpcs00k66e7l" path="res://Created Assets/Art/arm.png" id="12_7nbq1"]
+[ext_resource type="AudioStream" uid="uid://bggivwcr1y70o" path="res://Created Assets/SFX/small_v4.wav" id="16_vm72l"]
+[ext_resource type="AudioStream" uid="uid://den6hsx4ylevw" path="res://Created Assets/SFX/medium_v4.wav" id="17_vm72l"]
 [ext_resource type="Texture2D" uid="uid://co8qoxqcf0l4h" path="res://Created Assets/Art/detector_v2.png" id="18_7nbq1"]
+[ext_resource type="AudioStream" uid="uid://dee64uxp4nb34" path="res://Created Assets/SFX/large_v4.wav" id="18_vm72l"]
 [ext_resource type="Texture2D" uid="uid://7yhihec4pte3" path="res://Imported Assets/UI/Icons/Icon_Small_Blank_Dollar.png" id="21_exi56"]
 [ext_resource type="FontFile" uid="uid://d0068dh0imbkb" path="res://Imported Assets/Fonts/Super Giggle.ttf" id="22_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://bjijpiode3tdq" path="res://Imported Assets/UI/BoxesBanners/Box_Blank_Rounded.png" id="24_vm72l"]
@@ -129,18 +129,18 @@ collision_mask = 65536
 script = ExtResource("5_v158k")
 
 [node name="SmallProximityASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
-stream = ExtResource("6_rku1e")
+stream = ExtResource("16_vm72l")
 volume_db = -3.0
 bus = &"SmallProximity"
 playback_type = 1
 
 [node name="MediumProximityASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
-stream = ExtResource("7_rfjv2")
+stream = ExtResource("17_vm72l")
 volume_db = -3.0
 bus = &"MediumProximity"
 
 [node name="LargeProximityASP" type="AudioStreamPlayer" parent="Character/Rig/Detector"]
-stream = ExtResource("8_1phco")
+stream = ExtResource("18_vm72l")
 volume_db = -3.5
 bus = &"LargeProximity"
 
